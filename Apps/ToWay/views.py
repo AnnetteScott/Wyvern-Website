@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 def ToWay(request):
-  return render(request, 'HTML Content/index.html')
+  return HttpResponse('This is the ToWay App Page')
