@@ -1,1 +1,0 @@
-web: gunicorn Wyvern.wsgi --log-file -
