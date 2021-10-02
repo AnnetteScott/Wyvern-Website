@@ -1,1 +1,0 @@
-Interactive periodic table with details about the elements

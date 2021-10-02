@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7=s%ow%g)#^+ee6r9kp-n(2n&rtqpawzw=5-)!wcz0$u%bol2v'
+SECRET_KEY = 'django-insecure-lq4e(b74l$5q_93gkaxyi24o96+^x_)+or#ceo#$e5yo=y5fgn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'HomeHub.apps.HomehubConfig',
+    'ChemHub.apps.ChemhubConfig',
+    'GitZak.apps.GitzakConfig',
+    'HowToNotDie101.apps.Howtonotdie101Config',
+    'NettyHub.apps.NettyhubConfig',
+    'ToWay.apps.TowayConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -54,9 +62,7 @@ ROOT_URLCONF = 'Wyvern.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates'
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
