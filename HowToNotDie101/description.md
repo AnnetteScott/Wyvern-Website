@@ -1,0 +1,1 @@
+Library of useful infomation about potentially hazardous things that exsist in the world. From deadly plants, chemicals that you shouldn't not mix, foods related things, electricity.
