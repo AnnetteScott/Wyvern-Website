@@ -38,12 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'HomeHub.apps.HomehubConfig',
-    'ChemHub.apps.ChemhubConfig',
-    'GitZak.apps.GitzakConfig',
-    'HowToNotDie101.apps.Howtonotdie101Config',
-    'NettyHub.apps.NettyhubConfig',
-    'ToWay.apps.TowayConfig'
+    'HomeHub',
+    'ChemHub',
+    'GitZak',
+    'HowToNotDie101',
+    'NettyHub',
+    'ToWay',  
+    'CookieBook'
 
 ]
 

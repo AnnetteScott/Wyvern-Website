@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('HowToNotDie101.urls')),
     path('', include('NettyHub.urls')),
     path('', include('ToWay.urls')),
+    path('', include('CookieBook.urls')),
 ]
