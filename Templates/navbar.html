@@ -3,11 +3,11 @@
   <background></background>
   <site_logo><a href="/"><img src="{% static 'Images/siteLogo_white_24dp.svg' %}" draggable="false"><p>Wyvern</p></a></site_logo>
   <navlinks>
-    <a href="/" class="active"><p>Home</p></a>
-    <a href="{% url 'NettyHub' %}"><p>Netty</p></a>
-    <a href="{% url 'GitZak' %}"><p>Zak</p></a>
-    <a href="{% url 'ChemHub' %}"><p>ChemHub</p></a>
-    <a href="{% url 'ToWay' %}"><p>Which Way</p></a>
-    <a href="{% url 'HowToNotDie101' %}"><p>How To Not Die 101</p></a>
+    <a href="/" {% if request.path == "/" %}class="active"{% endif %}><p>Home</p></a>
+    <a href="{% url 'NettyHub' %}" {% if request.path == "/netty/" %}class="active"{% endif %}><p>Netty</p></a>
+    <a href="{% url 'GitZak' %}" {% if request.path == "/zak/" %}class="active"{% endif %}><p>Zak</p></a>
+    <a href="{% url 'ChemHub' %}" {% if request.path == "/chemhub/" %}class="active"{% endif %}><p>ChemHub</p></a>
+    <a href="{% url 'ToWay' %}" {% if request.path == "/whichway/" %}class="active"{% endif %}><p>Which Way</p></a>
+    <a href="{% url 'HowToNotDie101' %}" {% if request.path == "/hazards101/" %}class="active"{% endif %}><p>Hazards101</p></a>
   </navlinks>
 </nav>
