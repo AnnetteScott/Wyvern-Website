@@ -1,8 +1,27 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% block content %}
-<center_block>
-    <h1>This is the Home Page</h1>
-    <h1>WELCOME!</h1>
-</center_block>  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amita&family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+<style>
+    main{
+        height: 100%;
+    }
+</style>
+
+<background_image style="background-image:url({% static 'Images/home_background.jpg' %});"></background_image>
+
+<main>
+    <landing_center>
+        <h1>WYVERN</h1>
+    </landing_center>
+</main>
 {% endblock content %}
