@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [ 
-    path('Netty/', views.home, name="NettyHub"),
+    path('netty/', views.home, name="NettyHub"),
 ]
