@@ -1,3 +1,9 @@
+:root{
+  --primary_color: #000;
+  --secondary_color: #000;
+  --tertiary_color: #000;
+}
+
 nav{
   justify-content: center;
 }
@@ -6,4 +12,17 @@ site_logo:hover{
 }
 center_block{
   border: unset;
+}
+landing_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+landing_center h1{
+  font-size: 200px;
+  font-weight: 100;
+  font-family: 'Bonheur Royale', cursive;
+  letter-spacing: 10px;
 }
