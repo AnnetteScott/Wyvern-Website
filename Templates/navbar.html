@@ -1,9 +1,7 @@
 <nav>
   {% load static %}
   <background></background>
-  <a href="/">
-    <site_logo><img src="{% static 'Images/siteLogo_white_24dp.svg' %}" draggable="false"><p>Wyvern</p></site_logo>
-  </a>
+  <site_logo><a href="/"><img src="{% static 'Images/siteLogo_white_24dp.svg' %}" draggable="false"><p>Wyvern</p></a></site_logo>
   <navlinks>
     <a href="/" class="active"><p>Home</p></a>
     <a href="{% url 'NettyHub' %}"><p>Netty</p></a>
