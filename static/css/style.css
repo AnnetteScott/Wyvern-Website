@@ -1,3 +1,9 @@
+nav{
+  justify-content: center;
+}
+site_logo:hover{
+  width: calc(var(--ls_nav_height) + 10ch);
+}
 center_block{
   border: unset;
 }
