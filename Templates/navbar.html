@@ -1,13 +1,19 @@
+{% url 'NettyHub' as NettyHub %}
+{% url 'GitZak' as GitZak %}
+{% url 'ChemHub' as ChemHub %}
+{% url 'ToWay' as ToWay %}
+{% url 'HowToNotDie101' as HowToNotDie101 %}
+
 <nav>
   {% load static %}
   <background></background>
   <site_logo><a href="/"><img src="{% static 'Images/siteLogo_white_24dp.svg' %}" draggable="false"></a></site_logo>
   <navlinks>
     <a href="/" {% if request.path == "/" %}class="active"{% endif %}><p>Home</p></a>
-    <a href="{% url 'NettyHub' %}" {% if request.path == "/netty/" %}class="active"{% endif %}><p>Netty</p></a>
-    <a href="{% url 'GitZak' %}" {% if request.path == "/zak/" %}class="active"{% endif %}><p>Zak</p></a>
-    <a href="{% url 'ChemHub' %}" {% if request.path == "/chemhub/" %}class="active"{% endif %}><p>ChemHub</p></a>
-    <a href="{% url 'ToWay' %}" {% if request.path == "/whichway/" %}class="active"{% endif %}><p>Which Way</p></a>
-    <a href="{% url 'HowToNotDie101' %}" {% if request.path == "/hazards101/" %}class="active"{% endif %}><p>Hazards101</p></a>
+    <a href="{% url 'NettyHub' %}" {% if request.path == NettyHub %}class="active"{% endif %}><p>Netty</p></a>
+    <a href="{% url 'GitZak' %}" {% if request.path == GitZak %}class="active"{% endif %}><p>Zak</p></a>
+    <a href="{% url 'ChemHub' %}" {% if request.path == ChemHub %}class="active"{% endif %}><p>ChemHub</p></a>
+    <a href="{% url 'ToWay' %}" {% if request.path == ToWay %}class="active"{% endif %}><p>Which Way</p></a>
+    <a href="{% url 'HowToNotDie101' %}" {% if request.path == HowToNotDie101 %}class="active"{% endif %}><p>Hazards101</p></a>
   </navlinks>
 </nav>
