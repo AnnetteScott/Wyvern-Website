@@ -2,7 +2,7 @@ nav{
   justify-content: center;
 }
 site_logo:hover{
-  width: calc(var(--ls_nav_height) + 10ch);
+  width: calc(var(--ls_nav_height) + 10px);
 }
 center_block{
   border: unset;
