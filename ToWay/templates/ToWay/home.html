@@ -1,9 +1,25 @@
 {% extends 'main.html' %}
 
-{% block content %}
-<br>
-<br>
-<br>
-<h1>This Is The Which Way Template</h1>
+{% load static %}
 
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+
+<style>
+    main{
+        height: 100%;
+    }
+</style>
+
+<background_image style="background-image:url({% static 'Images/WhichWayHome_background.png' %});filter:blur(7px);"></background_image>
+
+<main>
+    <landing_center class="a_fade_in">
+        <h1>Which Way?</h1>
+        <h3>Coming Soon!</h3>
+    </landing_center>
+</main>
 {% endblock content %}
