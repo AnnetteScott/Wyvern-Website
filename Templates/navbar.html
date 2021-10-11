@@ -1,4 +1,5 @@
 {% url 'NettyHub' as NettyHub %}
+{% url 'HomeHub' as HomeHub %}
 {% url 'GitZak' as GitZak %}
 {% url 'ChemHub' as ChemHub %}
 {% url 'ToWay' as ToWay %}
@@ -10,12 +11,47 @@
   <background></background>
   <site_logo><a href="/"><img src="{% static 'Images/siteLogo_white_24dp.svg' %}" draggable="false"></a></site_logo>
   <navlinks>
-    <a href="/" {% if request.path == "/" %}class="active"{% endif %}><p>Home</p></a>
-    <a href="{% url 'NettyHub' %}" {% if request.path == NettyHub %}class="active"{% endif %}><p>Netty</p></a>
-    <a href="{% url 'GitZak' %}" {% if request.path == GitZak %}class="active"{% endif %}><p>Zak</p></a>
-    <a href="{% url 'ChemHub' %}" {% if request.path == ChemHub %}class="active"{% endif %}><p>ChemHub</p></a>
-    <a href="{% url 'CookieBook' %}" {% if CookieBook in request.path %}class="active"{% endif %}><p>Cookie Book</p></a>
-    <a href="{% url 'ToWay' %}" {% if request.path == ToWay %}class="active"{% endif %}><p>Which Way?</p></a>
-    <a href="{% url 'HowToNotDie101' %}" {% if request.path == HowToNotDie101 %}class="active"{% endif %}><p>Hazards 101</p></a>
+    <a href="/" 
+    {% if request.path == HomeHub  %}
+        class="active"
+    {% endif %}>
+    <p>Home</p></a>
+
+    <a href="{% url 'NettyHub' %}" 
+    {% if NettyHub in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Netty</p></a>
+
+    <a href="{% url 'GitZak' %}"
+    {% if GitZak in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Zak</p></a>
+
+    <a href="{% url 'ChemHub' %}" 
+    {% if ChemHub in request.path %}
+      class="active"
+    {% endif %}>
+    <p>ChemHub</p></a>
+
+    <a href="{% url 'CookieBook' %}" 
+    {% if CookieBook in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Cookie Book</p></a>
+
+    <a href="{% url 'ToWay' %}" 
+    {% if ToWay in request.path  %}
+      class="active"
+    {% endif %}>
+    <p>Which Way?</p></a>
+
+    <a href="{% url 'HowToNotDie101' %}" 
+    {% if HowToNotDie101 in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Hazards 101</p></a>
+
   </navlinks>
 </nav>
