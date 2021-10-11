@@ -58,15 +58,35 @@ def split_recipes(recipe_raw):
         recipe = []
     return recipe_list
 
+#Returns a dictionary with title as key
+def dict_recipe(recipes):
+    recipe_dict = {}
+    for index in range(0, len(recipes)):
+        title = recipes[index][0]
+        recipe_dict[title] = recipes[index + 1:]
+    return recipe_dict
+
+#Returns a list of titles
+def titles(recipes):
+    recipe_titles = []
+    for index in range(0, len(recipes)):
+        title = recipes[index][0]
+        recipe_titles.append(title)
+    return recipe_titles
+
+
 #Cooking page function
 def cooking_page():
     raw_data = readfile("Cooking.txt")
-    recipes = split_recipes(raw_data)
+    recipes_list = split_recipes(raw_data)
+    recipes_dict = dict_recipe(recipes_list)
+    recipe_titles = titles(recipes_list)
 
 #Baking page function
 def baking_page():
     raw_data = readfile("Baking.txt")
-    recipes = split_recipes(raw_data)
-
+    recipes_list = split_recipes(raw_data)
+    recipes_dict = dict_recipe(recipes_list)
+    recipe_titles = titles(recipes_list)
     
 
