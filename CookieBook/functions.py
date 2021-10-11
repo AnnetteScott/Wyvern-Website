@@ -69,5 +69,4 @@ def baking_page():
     recipes = split_recipes(raw_data)
 
     
-    
 
