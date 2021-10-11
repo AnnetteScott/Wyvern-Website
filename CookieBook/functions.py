@@ -1,3 +1,4 @@
+#Reads the given filename and splits the contents into a list, \n removed
 def readfile(filename):
     input_file = open(filename, "r")
     file_contents = input_file.read()
@@ -6,6 +7,7 @@ def readfile(filename):
     return file_list
 
 
+#Takes the raw txt file data and splits it up into seperate recipes - each one contained in a tuple
 def split_recipes(recipe_raw):
     title = ""
     ingred = []
@@ -54,14 +56,14 @@ def split_recipes(recipe_raw):
         recipe_tuple = tuple(recipe)
         recipe_list.append(recipe_tuple)
         recipe = []
-
     return recipe_list
 
+#Cooking page function
 def cooking_page():
     raw_data = readfile("Cooking.txt")
     recipes = split_recipes(raw_data)
 
-
+#Baking page function
 def baking_page():
     raw_data = readfile("Baking.txt")
     recipes = split_recipes(raw_data)
