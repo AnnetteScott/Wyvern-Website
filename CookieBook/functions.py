@@ -15,6 +15,10 @@ def split_recipes(recipe_raw):
     recipe_list = []
     for index in range(0, len(recipe_raw)):
         if "Title:" in recipe_raw[index]:
+            if len(recipe) != 0:
+                recipe_tuple = tuple(recipe)
+                recipe_list.append(recipe_tuple)
+                recipe = []
             semi = recipe_raw[index].find(":") + 1
             title = recipe_raw[index][semi:]
             title = title.strip()
@@ -23,10 +27,12 @@ def split_recipes(recipe_raw):
             ingredient_index = index  + 1
             ingredient_line = recipe_raw[ingredient_index]
             while "-" in ingredient_line:
-                dash = recipe_raw[ingredient_index].find("-") + 1
-                ingredient = recipe_raw[ingredient_index][dash:]
+                dash = ingredient_line.find("-")
+                ingredient = ingredient_line[dash + 1:]
                 ingredient = ingredient.strip()               
                 ingred.append(ingredient)
+                ingredient_index += 1
+                ingredient_line = recipe_raw[ingredient_index]
             recipe.append(ingred)
         elif "Cooking Time:" in recipe_raw[index]:
             semi = recipe_raw[index].find(":") + 1
@@ -36,15 +42,29 @@ def split_recipes(recipe_raw):
         elif "Instructions:" in recipe_raw[index]:
             instructions_index = index  + 1
             instructions_line = recipe_raw[instructions_index]
-            while "-" in instructions_line:
-                dash = recipe_raw[instructions_index].find("-") + 1
-                instruction = recipe_raw[instructions_index][dash:]
+            while "-" in instructions_line and instructions_index < len(recipe_raw):
+                instructions_line = recipe_raw[instructions_index]
+                dash = instructions_line.find("-")
+                instruction = instructions_line[dash + 1:]
                 instruction = instruction.strip()               
                 instructions.append(instruction)
+                instructions_index += 1
             recipe.append(instructions)
+    if len(recipe) != 0:
         recipe_tuple = tuple(recipe)
         recipe_list.append(recipe_tuple)
+        recipe = []
+
     return recipe_list
+
+def cooking_page():
+    raw_data = readfile("Cooking.txt")
+    recipes = split_recipes(raw_data)
+
+
+def baking_page():
+    raw_data = readfile("Baking.txt")
+    recipes = split_recipes(raw_data)
 
     
     
