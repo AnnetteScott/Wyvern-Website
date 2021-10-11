@@ -12,6 +12,26 @@
     main{
         height: 100%;
     }
+    .button {
+        background-color: #0FA22C;
+        width: 100px;
+        height: 30px;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        border-radius: 5px;
+        margin: 10px 50px;
+        cursor: pointer;
+        opacity: 0.5;
+        
+    }
+    .button:hover {
+        opacity: 1.0;
+        
+    }
 </style>
 
 <background_image style="background-image:url({% static 'Images/CookieHome_background.png' %});filter:blur(4px);"></background_image>
@@ -19,8 +39,11 @@
 <main>
     <landing_center class="a_fade_in">
         <h1>Cookie Book</h1>
-        <h2>Your Cook e-Book</h2>
-        <h3>Coming Soon!</h3>
+        <div>
+            <a href="{% url 'Cooking' %}" onclick="alert('This is the Cooking Page!')" class="button">Cooking</a>
+            <a href="{% url 'Baking' %}" onclick="alert('This is the Baking Page!')" class="button">Baking</a>
+        </div>
+
     </landing_center>
 </main>
 {% endblock content %}

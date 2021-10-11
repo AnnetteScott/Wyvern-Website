@@ -14,7 +14,7 @@
     <a href="{% url 'NettyHub' %}" {% if request.path == NettyHub %}class="active"{% endif %}><p>Netty</p></a>
     <a href="{% url 'GitZak' %}" {% if request.path == GitZak %}class="active"{% endif %}><p>Zak</p></a>
     <a href="{% url 'ChemHub' %}" {% if request.path == ChemHub %}class="active"{% endif %}><p>ChemHub</p></a>
-    <a href="{% url 'CookieBook' %}" {% if request.path == CookieBook %}class="active"{% endif %}><p>Cookie Book</p></a>
+    <a href="{% url 'CookieBook' %}" {% if CookieBook in request.path %}class="active"{% endif %}><p>Cookie Book</p></a>
     <a href="{% url 'ToWay' %}" {% if request.path == ToWay %}class="active"{% endif %}><p>Which Way?</p></a>
     <a href="{% url 'HowToNotDie101' %}" {% if request.path == HowToNotDie101 %}class="active"{% endif %}><p>Hazards 101</p></a>
   </navlinks>
