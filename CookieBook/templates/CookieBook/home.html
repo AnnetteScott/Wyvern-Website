@@ -13,7 +13,7 @@
         height: 100%;
     }
     .button {
-        background-color: #0FA22C;
+        background-color: #16CECA;
         width: 100px;
         height: 30px;
         border: none;
@@ -26,11 +26,21 @@
         margin: 10px 50px;
         cursor: pointer;
         opacity: 0.5;
+        transition: 0.1s ease all;
         
     }
     .button:hover {
         opacity: 1.0;
+        transform: scale(1.5);
+        border-radius: 10px;
+
         
+    }
+    .cookingColour:hover {
+        background-color: #5A16CE;
+    }    
+    .bakingColour:hover {
+        background-color: #0F3CA2;
     }
 </style>
 
@@ -40,8 +50,8 @@
     <landing_center class="a_fade_in">
         <h1>Cookie Book</h1>
         <div>
-            <a href="{% url 'Cooking' %}" onclick="alert('This is the Cooking Page!')" class="button">Cooking</a>
-            <a href="{% url 'Baking' %}" onclick="alert('This is the Baking Page!')" class="button">Baking</a>
+            <a href="{% url 'Cooking' %}" onclick="alert('This is the Cooking Page!')" class="button cookingColour">Cooking</a>
+            <a href="{% url 'Baking' %}" onclick="alert('This is the Baking Page!')" class="button bakingColour">Baking</a>
         </div>
 
     </landing_center>
