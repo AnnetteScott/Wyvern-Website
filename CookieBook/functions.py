@@ -1,8 +1,6 @@
-from django.core.files import File
-
 #Reads the given filename and splits the contents into a list, \n removed
-def readfile(filename):
-    input_file = open(filename, "r")
+def readfile_cooking():
+    input_file = open("CookieBook/Recipes/Cooking.txt", "r")
     file_contents = input_file.read()
     file_list = file_contents.split("\n")
     input_file.close()
@@ -48,7 +46,9 @@ def get_recipe_titles(recipes_list):
     return recipe_titles
 
 
-def get_recipe_urls(recipe_titles):
+def get_recipe_urls_cooking():
+    raw_data = readfile_cooking()
+    recipe_titles = get_recipe_titles(split_recipes(raw_data))
     recipe_url = []
     for title in recipe_titles:
         title = title.lower()
@@ -56,25 +56,19 @@ def get_recipe_urls(recipe_titles):
         url = title[:space] + title[space + 1:]
         recipe_url.append(url)
     return recipe_url
-
-
-
-
-#Cooking page function
-def cooking_page():
-    raw_data = readfile("CookieBook/Recipes/Cooking.txt")
-    recipes_list = split_recipes(raw_data)
-    recipe_titles = get_recipe_titles(recipes_list)
-    recipe_urls = get_recipe_urls(recipe_titles)
-    print(recipe_urls)
-
-
-
-#Baking page function
-def baking_page():
-    raw_data = readfile("CookieBook/Recipes/Baking.txt")
-    recipes_list = split_recipes(raw_data)
-    recipe_titles = get_recipe_titles(recipes_list)
-
     
-cooking_page()
+
+def get_recipe_dict_cooking():
+    recipes_list = split_recipes(readfile_cooking())
+    titles = get_recipe_titles(recipes_list)
+    recipe_dict_list = []
+    urls = get_recipe_urls_cooking()
+    index = 0
+    for url_name in urls:
+        recipe_dict = {}
+        recipe_dict['url'] = url_name
+        recipe_dict['title'] = titles[index]
+        recipe_dict['recipe'] = recipes_list[index][1:]
+        recipe_dict_list.append(recipe_dict)
+        index += 1
+    return recipe_dict_list
