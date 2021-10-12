@@ -1,3 +1,5 @@
+from django.core.files import File
+
 #Reads the given filename and splits the contents into a list, \n removed
 def readfile(filename):
     input_file = open(filename, "r")
@@ -8,54 +10,61 @@ def readfile(filename):
 
 
 #Takes the raw txt file data and splits it up into seperate recipes - each one contained in a tuple
-def split_recipes(recipe_raw):
-    title = ""
-    ingred = []
-    cooking_time = ""
-    instructions = []
-    recipe = []
+def split_recipes(raw_data_list):
+    modified_data = raw_data_list
     recipe_list = []
-    for index in range(0, len(recipe_raw)):
-        if "Title:" in recipe_raw[index]:
-            if len(recipe) != 0:
-                recipe_tuple = tuple(recipe)
-                recipe_list.append(recipe_tuple)
-                recipe = []
-            semi = recipe_raw[index].find(":") + 1
-            title = recipe_raw[index][semi:]
+    current_recipe = []
+    index_end = 0
+    for line_to_check in raw_data_list:
+
+        if "Title:" in line_to_check:
+            if len(current_recipe) != 0:
+                recipe_list.append(tuple(current_recipe))
+                current_recipe = []
+                modified_data = raw_data_list[index_end + 1:]
+            title = line_to_check[6:]
             title = title.strip()
-            recipe.append(title)
-        elif "Ingredients:" in recipe_raw[index]:
-            ingredient_index = index  + 1
-            ingredient_line = recipe_raw[ingredient_index]
-            while "-" in ingredient_line:
-                dash = ingredient_line.find("-")
-                ingredient = ingredient_line[dash + 1:]
-                ingredient = ingredient.strip()               
-                ingred.append(ingredient)
-                ingredient_index += 1
-                ingredient_line = recipe_raw[ingredient_index]
-            recipe.append(ingred)
-        elif "Cooking Time:" in recipe_raw[index]:
-            semi = recipe_raw[index].find(":") + 1
-            cooking_time = recipe_raw[index][semi:]
-            cooking_time = cooking_time.strip()
-            recipe.append(cooking_time)
-        elif "Instructions:" in recipe_raw[index]:
-            instructions_index = index  + 1
-            instructions_line = recipe_raw[instructions_index]
-            while "-" in instructions_line and instructions_index < len(recipe_raw):
-                instructions_line = recipe_raw[instructions_index]
-                dash = instructions_line.find("-")
-                instruction = instructions_line[dash + 1:]
-                instruction = instruction.strip()               
-                instructions.append(instruction)
-                instructions_index += 1
-            recipe.append(instructions)
-    if len(recipe) != 0:
-        recipe_tuple = tuple(recipe)
-        recipe_list.append(recipe_tuple)
-        recipe = []
+            current_recipe.append(title)
+        
+        if "Ingredients:" in line_to_check:
+            index_start = (modified_data.index("Ingredients:")) + 1
+            index_end = raw_data_list[index_start]
+            end_line = raw_data_list[index_end]
+            ingredients = []
+    
+            while "Cooking Time:" not in end_line:
+                index_end += 1
+                end_line = raw_data_list[index_end]
+
+            while index_start <= index_end:
+                ingredients.append(raw_data_list[index_start][2:])
+                index_start += 1
+            
+            current_recipe.append(ingredients)
+        
+        if "Cooking Time:" in line_to_check:
+            cooking_time = line_to_check[14:]
+            current_recipe.append(cooking_time)
+        
+        if "Instructions:" in line_to_check:
+            index_start = (modified_data.index("Instructions:")) + 1
+            index_end = raw_data_list[index_start]
+            end_line = raw_data_list[index_end]
+            instructions = []
+    
+            while "Title: " not in end_line:
+                index_end += 1
+                end_line = raw_data_list[index_end]
+
+            while index_start <= index_end:
+                instructions.append(raw_data_list[index_start][2:])
+                index_start += 1
+            
+            current_recipe.append(instructions)
+    
+    recipe_list.append(tuple(current_recipe))
+    current_recipe = []
+    modified_data = raw_data_list[index_end + 1:]
     return recipe_list
 
 #Returns a dictionary with title as key
@@ -63,7 +72,7 @@ def dict_recipe(recipes):
     recipe_dict = {}
     for index in range(0, len(recipes)):
         title = recipes[index][0]
-        recipe_dict[title] = recipes[index + 1:]
+        recipe_dict[title] = recipes[index][1:]
     return recipe_dict
 
 #Returns a list of titles
@@ -77,16 +86,19 @@ def titles(recipes):
 
 #Cooking page function
 def cooking_page():
-    raw_data = readfile("Cooking.txt")
+    raw_data = readfile("CookieBook/Recipes/Cooking.txt")
     recipes_list = split_recipes(raw_data)
     recipes_dict = dict_recipe(recipes_list)
     recipe_titles = titles(recipes_list)
+  #  print(recipe_titles)
+   # print(recipes_dict)
+
 
 #Baking page function
 def baking_page():
-    raw_data = readfile("Baking.txt")
+    raw_data = readfile("CookieBook/Recipes/Baking.txt")
     recipes_list = split_recipes(raw_data)
     recipes_dict = dict_recipe(recipes_list)
     recipe_titles = titles(recipes_list)
     
-
+cooking_page()
