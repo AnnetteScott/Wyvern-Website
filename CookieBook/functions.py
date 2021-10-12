@@ -20,7 +20,7 @@ def split_recipes(raw_data_list):
                 html_title = "<h1>" + title + "</h1>"
                 current_recipe.append(html_title)
             else:
-                recipe_list.append(current_recipe)
+                recipe_list.append(tuple(current_recipe))
                 current_recipe = []
                 title = line_to_check[7:]
                 html_title = "<h1>" + title + "</h1>"
@@ -38,9 +38,25 @@ def split_recipes(raw_data_list):
             html_instruct = "<h2>" + line_to_check + "</h2>"
             current_recipe.append(html_instruct)
 
-    recipe_list.append(current_recipe)
-       
+    recipe_list.append(tuple(current_recipe))     
     return recipe_list
+
+def get_recipe_titles(recipes_list):
+    recipe_titles = []
+    for index in range(0, len(recipes_list)):
+        recipe_titles.append(recipes_list[index][0][4:-5])
+    return recipe_titles
+
+
+def get_recipe_urls(recipe_titles):
+    recipe_url = []
+    for title in recipe_titles:
+        title = title.lower()
+        space = title.find(" ")
+        url = title[:space] + title[space + 1:]
+        recipe_url.append(url)
+    return recipe_url
+
 
 
 
@@ -48,7 +64,9 @@ def split_recipes(raw_data_list):
 def cooking_page():
     raw_data = readfile("CookieBook/Recipes/Cooking.txt")
     recipes_list = split_recipes(raw_data)
-    print(recipes_list)
+    recipe_titles = get_recipe_titles(recipes_list)
+    recipe_urls = get_recipe_urls(recipe_titles)
+    print(recipe_urls)
 
 
 
@@ -56,6 +74,7 @@ def cooking_page():
 def baking_page():
     raw_data = readfile("CookieBook/Recipes/Baking.txt")
     recipes_list = split_recipes(raw_data)
+    recipe_titles = get_recipe_titles(recipes_list)
 
     
 cooking_page()
