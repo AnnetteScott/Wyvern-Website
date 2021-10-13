@@ -15,14 +15,12 @@ def split_recipes(raw_data_list):
         if "Title:" in line_to_check:
             if len(current_recipe) == 0:
                 title = line_to_check[7:]
-                html_title = "<h1>" + title + "</h1>"
-                current_recipe.append(html_title)
+                current_recipe.append(title)
             else:
                 recipe_list.append(tuple(current_recipe))
                 current_recipe = []
                 title = line_to_check[7:]
-                html_title = "<h1>" + title + "</h1>"
-                current_recipe.append(html_title)
+                current_recipe.append(title)
         
         if "Ingredients:" in line_to_check:
             html_ingred = "<h2>" + line_to_check + "</h2>"
@@ -42,7 +40,7 @@ def split_recipes(raw_data_list):
 def get_recipe_titles(recipes_list):
     recipe_titles = []
     for index in range(0, len(recipes_list)):
-        recipe_titles.append(recipes_list[index][0][4:-5])
+        recipe_titles.append(recipes_list[index][0])
     return recipe_titles
 
 

@@ -6,9 +6,17 @@ from . import functions
 def home(request):
     return render(request, 'CookieBook/home.html')
 
-def cooking(request):
-    return render(request, 'CookieBook/cooking.html')
 
+
+# Create your views here.
+def home(request):
+    return render(request, 'CookieBook/home.html')
+
+recipes = functions.get_recipe_dict_cooking()
+
+def cooking(request):
+    context = {'recipes': recipes}
+    return render(request, 'CookieBook/cooking.html', context)
 
 recipe_cooking_list = functions.get_recipe_dict_cooking()
 
