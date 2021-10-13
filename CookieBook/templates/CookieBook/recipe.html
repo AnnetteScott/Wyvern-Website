@@ -12,8 +12,17 @@
         padding: 60px 0px 0px 0px;
         text-align: center;
     }
-</style>
+    div{
+        background-color:bisque;
+        color:black;
+        border-right-style: solid;
+        border-left-style: solid;
+        border-color: bisque;
+        border-width: 25px;
+    }
 
+
+</style>
 <div>
     <h1>{{ recipe.title }}</h1>
         {% for recipe_item in recipe.recipe %}
