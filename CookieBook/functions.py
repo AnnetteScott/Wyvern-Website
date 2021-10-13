@@ -36,6 +36,10 @@ def split_recipes(raw_data_list):
         if "-" in line_to_check:
             html_bullet = "<li>" + line_to_check[2:] + "</li>"
             current_recipe.append(html_bullet)
+            
+        if "Cooking Time:" in line_to_check:
+            html_time = "<h2>" + line_to_check + "</h2>"
+            current_recipe.append(html_time)
         
         if "Instructions:" in line_to_check:
             html_instruct = "<h2>" + line_to_check + "</h2>"
