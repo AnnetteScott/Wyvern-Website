@@ -5,6 +5,13 @@ def readfile_cooking():
     file_list = file_contents.split("\n")
     input_file.close()
     return file_list
+    
+def readfile_baking():
+    input_file = open("CookieBook/Recipes/Baking.txt", "r")
+    file_contents = input_file.read()
+    file_list = file_contents.split("\n")
+    input_file.close()
+    return file_list
 
 
 #Takes the raw txt file data and splits it up into seperate recipes - each one contained in a tuple
@@ -61,6 +68,33 @@ def get_recipe_dict_cooking():
     titles = get_recipe_titles(recipes_list)
     recipe_dict_list = []
     urls = get_recipe_urls_cooking()
+    index = 0
+    for url_name in urls:
+        recipe_dict = {}
+        recipe_dict['url'] = url_name
+        recipe_dict['title'] = titles[index]
+        recipe_dict['recipe'] = recipes_list[index][1:]
+        recipe_dict_list.append(recipe_dict)
+        index += 1
+    return recipe_dict_list
+    
+def get_recipe_urls_baking():
+    raw_data = readfile_baking()
+    recipe_titles = get_recipe_titles(split_recipes(raw_data))
+    recipe_url = []
+    for title in recipe_titles:
+        title = title.lower()
+        space = title.find(" ")
+        url = title[:space] + title[space + 1:]
+        recipe_url.append(url)
+    return recipe_url
+    
+
+def get_recipe_dict_baking():
+    recipes_list = split_recipes(readfile_baking())
+    titles = get_recipe_titles(recipes_list)
+    recipe_dict_list = []
+    urls = get_recipe_urls_baking()
     index = 0
     for url_name in urls:
         recipe_dict = {}

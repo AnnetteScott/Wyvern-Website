@@ -8,5 +8,5 @@ urlpatterns = [
     path('cookebook/baking/', views.baking, name="Baking"),
 
     path('cookebook/cooking/<slug:recipename>/', views.cookingRecipe, name="CookingRecipe"),
-    path('cookebook/baking/<slug:recipename>/', views.cookingRecipe, name="BakingRecipe"),
+    path('cookebook/baking/<slug:recipename>/', views.bakingRecipe, name="BakingRecipe"),
 ]

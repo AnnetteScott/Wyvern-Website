@@ -25,6 +25,19 @@ def cookingRecipe(request, recipename):
             recipe = pair
     context = {'recipe': recipe}
     return render(request, 'CookieBook/recipe.html', context)
-    
+
+
+recipes = functions.get_recipe_dict_baking()
+  
 def baking(request):
-    return render(request, 'CookieBook/baking.html')
+    context = {'recipes': recipes}
+    return render(request, 'CookieBook/baking.html', context)
+
+def bakingRecipe(request, recipename):
+    recipe = None
+    for pair in recipes:
+        if pair['url'] == str(recipename):
+            recipe = pair
+    context = {'recipe': recipe}
+    return render(request, 'CookieBook/recipe.html', context)
+    
