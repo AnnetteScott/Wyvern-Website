@@ -8,17 +8,16 @@
 
 
 <style>
-    main{
-        height: 100%;
-        background-color: #0F92A2;
+    h1{
+        padding: 60px 0px 0px 0px;
+        text-align: center;
     }
 </style>
-
-<main>
-    <landing_center class="a_fade_in">
+    <div>
         <h1>{{ recipe.title }}</h1>
-        <h3>{{ recipe.recipe }}</h3>
-
-    </landing_center>
-</main>
+            {% for recipe_item in recipe.recipe %}
+                {{ recipe_item|safe }}<br>
+            {% endfor %} 
+    </div>
 {% endblock content %}
+
