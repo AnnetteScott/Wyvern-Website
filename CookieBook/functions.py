@@ -51,9 +51,7 @@ def get_recipe_titles(recipes_list):
     return recipe_titles
 
 
-def get_recipe_urls_cooking():
-    raw_data = readfile_cooking()
-    recipe_titles = get_recipe_titles(split_recipes(raw_data))
+def get_recipe_urls(recipe_titles):
     recipe_url = []
     for title in recipe_titles:
         title = title.lower()
@@ -67,7 +65,7 @@ def get_recipe_dict_cooking():
     recipes_list = split_recipes(readfile_cooking())
     titles = get_recipe_titles(recipes_list)
     recipe_dict_list = []
-    urls = get_recipe_urls_cooking()
+    urls = get_recipe_urls(titles)
     index = 0
     for url_name in urls:
         recipe_dict = {}
@@ -78,23 +76,11 @@ def get_recipe_dict_cooking():
         index += 1
     return recipe_dict_list
     
-def get_recipe_urls_baking():
-    raw_data = readfile_baking()
-    recipe_titles = get_recipe_titles(split_recipes(raw_data))
-    recipe_url = []
-    for title in recipe_titles:
-        title = title.lower()
-        space = title.find(" ")
-        url = title[:space] + title[space + 1:]
-        recipe_url.append(url)
-    return recipe_url
-    
-
 def get_recipe_dict_baking():
     recipes_list = split_recipes(readfile_baking())
     titles = get_recipe_titles(recipes_list)
     recipe_dict_list = []
-    urls = get_recipe_urls_baking()
+    urls = get_recipe_urls(titles)
     index = 0
     for url_name in urls:
         recipe_dict = {}
@@ -104,3 +90,4 @@ def get_recipe_dict_baking():
         recipe_dict_list.append(recipe_dict)
         index += 1
     return recipe_dict_list
+    
