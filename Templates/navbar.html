@@ -5,7 +5,10 @@
 {% url 'ToWay' as ToWay %}
 {% url 'HowToNotDie101' as HowToNotDie101 %}
 {% url 'CookieBook' as CookieBook %}
+{% url 'Cooking' as Cooking%}
+{% url 'Baking' as Baking%}
 {% load static %}
+
 
 <nav>
   <background></background>
@@ -35,11 +38,27 @@
     {% endif %}>
     <p>ChemHub</p></a>
 
-    <a href="{% url 'CookieBook' %}" 
-    {% if CookieBook in request.path %}
-      class="active"
-    {% endif %}>
-    <p>Cooke Book</p></a>
+    {% if Cooking not in request.path and Baking not in request.path %}
+      <a href="{% url 'CookieBook' %}" 
+      {% if CookieBook in request.path %}
+        class="active"
+      {% endif %}>
+      <p>Cooke Book</p></a>
+    {% endif %}
+
+    {% if Cooking in request.path or Baking in request.path %}
+      <a href="{% url 'Cooking' %}" 
+      {% if Cooking in request.path  %}
+        class="active"
+      {% endif %}>
+      <p>Cooking</p></a>
+
+      <a href="{% url 'Baking' %}" 
+      {% if Baking in request.path  %}
+        class="active"
+      {% endif %}>
+      <p>Baking</p></a>
+    {% endif %}
 
     <a href="{% url 'ToWay' %}" 
     {% if ToWay in request.path  %}

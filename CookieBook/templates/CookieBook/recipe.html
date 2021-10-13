@@ -13,11 +13,12 @@
         text-align: center;
     }
 </style>
-    <div>
-        <h1>{{ recipe.title }}</h1>
-            {% for recipe_item in recipe.recipe %}
-                {{ recipe_item|safe }}<br>
-            {% endfor %} 
-    </div>
+
+<div>
+    <h1>{{ recipe.title }}</h1>
+        {% for recipe_item in recipe.recipe %}
+            {{ recipe_item|safe }}<br>
+        {% endfor %} 
+</div>
 {% endblock content %}
 

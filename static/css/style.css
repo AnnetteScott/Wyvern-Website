@@ -4,6 +4,10 @@
   --tertiary_color: #000;
 }
 
+.topleft {
+  justify-content: right;
+  }
+
 nav{
   justify-content: center;
   backdrop-filter: blur(3px);
