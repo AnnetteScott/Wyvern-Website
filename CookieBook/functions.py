@@ -59,8 +59,7 @@ def get_recipe_urls(recipe_titles):
     recipe_url = []
     for title in recipe_titles:
         title = title.lower()
-        space = title.find(" ")
-        url = title[:space] + title[space + 1:]
+        url = title.replace(" ", "-")
         recipe_url.append(url)
     return recipe_url
     
