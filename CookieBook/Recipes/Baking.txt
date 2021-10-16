@@ -21,7 +21,7 @@ Instructions:
 - (optional) Sprinkle or place the cheese on top of the cheese sauce
 - Place loaf in oven and cook for 30 minutes or untill a knife goes through the pasta easily
 - Allow to cool slightly before consuming
-Background Image: trad_pancakes.jpg
+Background Image: beef_lasagna.jpg
 
 
 Title: Chocolate Chip Biscuits
@@ -43,4 +43,4 @@ Instructions:
 - Using a whisk or spoon, mix in the remianing dry ingredients
 - Roll into a medium size ball and place on the baking tray. Flaten slightly
 - Bake for 12 minutes
-Background Image: trad_pancakes.jpg
+Background Image: chocolate_chip_cookies.jpg
