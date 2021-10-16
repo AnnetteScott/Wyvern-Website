@@ -38,17 +38,12 @@
 </style>
 
 <main>
-    <content_center class="a_fade_in">
-    <div>
-        <div>
+    <content_center>
+        <grid_medium>
             {% for recipe in recipes %}
-            <div>
                 <a href="{% url 'Cooking' %}{{recipe.url}}/" class="button">{{recipe.title}}</a>
-            </div>
             {% endfor %}
-
-        </div>
-    </div>
+        </grid_medium>
     </content_center>
 </main>
 
