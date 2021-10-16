@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+
+<style>
+    body{
+        height: 100%;
+        background-color: #0C3566;
+    }
+    .button {
+        background-color: #0C3566;
+        width: fit-content;
+        height: 30px;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        font-size: 20px;
+        border-radius: 5px;
+        margin: 10px 50px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.1s ease all;
+        
+    }
+     .button:hover {
+        background-color: #3D0C66;
+        opacity: 1.0;
+        transform: scale(1.5);
+        border-radius: 10px;      
+    }
+</style>
+
+<main>
+    <content_center class="a_fade_in">
+    <div>
+        <div>
+            {% for recipe in recipes %}
+            <div>
+                <a href="{% url 'Cooking' %}{{recipe.url}}/" class="button">{{recipe.title}}</a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    </content_center>
+</main>
+
+
+{% endblock content %}
