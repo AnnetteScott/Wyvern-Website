@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'HowToNotDie101',
     'NettyHub',
     'ToWay',  
-    'CookieBook'
-
+    'CookieBook',
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,5 @@
+from ..Wyvern.global_functions import variables
+
 #Reads the given filename and splits the contents into a list, \n removed
 def readfile(filename):
     file = "CookieBook/Recipes/" + filename + ".txt"
@@ -73,3 +75,16 @@ def get_recipe_dict(filename):
         recipe_dict_list.append(recipe_dict)
         index += 1
     return recipe_dict_list
+
+
+
+def alphabet_recipe(filename):
+    alphabet_dict = variables.get_alphabet_dict()
+    recipe_dict = get_recipe_dict(filename)
+    for item in recipe_dict:
+        dict_item = item
+        first_letter = dict_item['title'][0]
+        print(first_letter)
+
+
+alphabet_recipe("Baking")
