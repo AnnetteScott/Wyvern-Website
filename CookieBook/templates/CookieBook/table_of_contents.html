@@ -44,12 +44,30 @@
         <grid_medium>
             {% if Cooking in request.path %}
                 {% for recipe in recipes %}
-                    <a href="{% url Cooking %}{{recipe.url}}/" class="button">{{recipe.title}}</a>
+                    <a href="{% url Cooking %}{{recipe.url}}/" class="button">
+                        <card>
+                            <img src="" draggable="false">
+                            <card_inner>
+                                <h3>{{recipe.title}}</h3>
+                                <info></info>
+                                <p></p>
+                            </card_inner>
+                        </card>
+                    </a>
                 {% endfor %}
             {% endif %}
             {% if Baking in request.path %}
                 {% for recipe in recipes %}
-                    <a href="{% url Baking %}{{recipe.url}}/" class="button">{{recipe.title}}</a>
+                    <a href="{% url Baking %}{{recipe.url}}/" class="button">
+                      <card>
+                          <img src="" draggable="false">
+                          <card_inner>
+                              <h3>{{recipe.title}}</h3>
+                              <info></info>
+                              <p></p>
+                          </card_inner>
+                      </card>
+                  </a>
                 {% endfor %}
             {% endif %}           
         </grid_medium>
