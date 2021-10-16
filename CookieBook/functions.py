@@ -1,4 +1,5 @@
-from ..Wyvern.global_functions import variables
+#from ..global_functions.variables import get_alphabet_dict
+
 
 #Reads the given filename and splits the contents into a list, \n removed
 def readfile(filename):
@@ -9,7 +10,6 @@ def readfile(filename):
     input_file.close()
     return file_list
     
-
 #Takes the raw txt file data and splits it up into seperate recipes - each one contained in a tuple
 def split_recipes(raw_data_list):
     recipe_list = []
@@ -76,15 +76,3 @@ def get_recipe_dict(filename):
         index += 1
     return recipe_dict_list
 
-
-
-def alphabet_recipe(filename):
-    alphabet_dict = variables.get_alphabet_dict()
-    recipe_dict = get_recipe_dict(filename)
-    for item in recipe_dict:
-        dict_item = item
-        first_letter = dict_item['title'][0]
-        print(first_letter)
-
-
-alphabet_recipe("Baking")
