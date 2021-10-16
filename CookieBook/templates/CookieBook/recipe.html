@@ -25,13 +25,16 @@
         border-color: bisque;
         border-width: 25px;
     }
+    li{
+        line-height: 2.2em;
+    }
 
 
 </style>
 <div>
     <h1>{{ recipe.title }}</h1>
         {% for recipe_item in recipe.recipe %}
-            {{ recipe_item|safe }}<br>
+            {{ recipe_item|safe }}
         {% endfor %} 
 </div>
 {% endblock content %}
