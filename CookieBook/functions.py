@@ -1,18 +1,12 @@
 #Reads the given filename and splits the contents into a list, \n removed
-def readfile_cooking():
-    input_file = open("CookieBook/Recipes/Cooking.txt", "r")
+def readfile(filename):
+    file = "CookieBook/Recipes/" + filename + ".txt"
+    input_file = open(file, "r")
     file_contents = input_file.read()
     file_list = file_contents.split("\n")
     input_file.close()
     return file_list
     
-def readfile_baking():
-    input_file = open("CookieBook/Recipes/Baking.txt", "r")
-    file_contents = input_file.read()
-    file_list = file_contents.split("\n")
-    input_file.close()
-    return file_list
-
 
 #Takes the raw txt file data and splits it up into seperate recipes - each one contained in a tuple
 def split_recipes(raw_data_list):
@@ -48,13 +42,14 @@ def split_recipes(raw_data_list):
     recipe_list.append(tuple(current_recipe))     
     return recipe_list
 
+#Gets the recipe titles
 def get_recipe_titles(recipes_list):
     recipe_titles = []
     for index in range(0, len(recipes_list)):
         recipe_titles.append(recipes_list[index][0])
     return recipe_titles
 
-
+#formats the titles into urls
 def get_recipe_urls(recipe_titles):
     recipe_url = []
     for title in recipe_titles:
@@ -63,9 +58,9 @@ def get_recipe_urls(recipe_titles):
         recipe_url.append(url)
     return recipe_url
     
-
-def get_recipe_dict_cooking():
-    recipes_list = split_recipes(readfile_cooking())
+#returns a list with dictionary items for each recipe
+def get_recipe_dict(filename):
+    recipes_list = split_recipes(readfile(filename))
     titles = get_recipe_titles(recipes_list)
     recipe_dict_list = []
     urls = get_recipe_urls(titles)
@@ -78,19 +73,3 @@ def get_recipe_dict_cooking():
         recipe_dict_list.append(recipe_dict)
         index += 1
     return recipe_dict_list
-    
-def get_recipe_dict_baking():
-    recipes_list = split_recipes(readfile_baking())
-    titles = get_recipe_titles(recipes_list)
-    recipe_dict_list = []
-    urls = get_recipe_urls(titles)
-    index = 0
-    for url_name in urls:
-        recipe_dict = {}
-        recipe_dict['url'] = url_name
-        recipe_dict['title'] = titles[index]
-        recipe_dict['recipe'] = recipes_list[index][1:]
-        recipe_dict_list.append(recipe_dict)
-        index += 1
-    return recipe_dict_list
-    
