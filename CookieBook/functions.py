@@ -14,6 +14,7 @@ def readfile(filename):
 def split_recipes(raw_data_list):
     recipe_list = []
     current_recipe = []
+    recipe_backgrounds = []
     for line_to_check in raw_data_list:
         if "Title:" in line_to_check:
             if len(current_recipe) == 0:
@@ -39,40 +40,46 @@ def split_recipes(raw_data_list):
         
         if "Instructions:" in line_to_check:
             html_instruct = "<h2>" + line_to_check + "</h2>"
-            current_recipe.append(html_instruct)
+            current_recipe.append(html_instruct)    
 
-    recipe_list.append(tuple(current_recipe))     
-    return recipe_list
+        if "Background Image:" in line_to_check:
+            semi = line_to_check.find(":")
+            image = line_to_check[semi + 2:]
+            recipe_backgrounds.append(image)  
 
-#Gets the recipe titles
-def get_recipe_titles(recipes_list):
+    recipe_list.append(tuple(current_recipe))
+
     recipe_titles = []
-    for index in range(0, len(recipes_list)):
-        recipe_titles.append(recipes_list[index][0])
-    return recipe_titles
+    for index in range(0, len(recipe_list)):
+        recipe_titles.append(recipe_list[index][0])
 
-#formats the titles into urls
-def get_recipe_urls(recipe_titles):
     recipe_url = []
     for title in recipe_titles:
         title = title.lower()
         url = title.replace(" ", "-")
         recipe_url.append(url)
-    return recipe_url
-    
+
+    all_info = (recipe_url, recipe_titles, recipe_list, recipe_backgrounds) 
+
+    return all_info
+
+
 #returns a list with dictionary items for each recipe
 def get_recipe_dict(filename):
-    recipes_list = split_recipes(readfile(filename))
-    titles = get_recipe_titles(recipes_list)
+    all_info = split_recipes(readfile(filename))
+    urls = all_info[0]
+    titles = all_info[1]
+    recipe_list = all_info[2]
+    recipe_backgrounds = all_info[3]
     recipe_dict_list = []
-    urls = get_recipe_urls(titles)
     index = 0
     for url_name in urls:
         recipe_dict = {}
         recipe_dict['url'] = url_name
         recipe_dict['title'] = titles[index]
-        recipe_dict['recipe'] = recipes_list[index][1:]
+        recipe_dict['recipe'] = recipe_list[index][1:]
+        recipe_dict['background'] = recipe_backgrounds[index]
         recipe_dict_list.append(recipe_dict)
         index += 1
+    
     return recipe_dict_list
-
