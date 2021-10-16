@@ -6,12 +6,6 @@ from . import functions
 def home(request):
     return render(request, 'CookieBook/home.html')
 
-
-
-# Create your views here.
-def home(request):
-    return render(request, 'CookieBook/home.html')
-
 recipes_cooking = functions.get_recipe_dict("Cooking")
 
 def cooking(request):
