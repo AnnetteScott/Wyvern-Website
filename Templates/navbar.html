@@ -38,13 +38,11 @@
     {% endif %}>
     <p>ChemHub</p></a>
 
-    {% if Cooking not in request.path and Baking not in request.path %}
-      <a href="{% url 'CookieBook' %}" 
-      {% if CookieBook in request.path %}
-        class="active"
-      {% endif %}>
-      <p>Cooke Book</p></a>
-    {% endif %}
+    <a href="{% url 'CookieBook' %}" 
+    {% if CookieBook in request.path and Cooking not in request.path and Baking not in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Cooke Book</p></a>
 
     {% if Cooking in request.path or Baking in request.path %}
       <a href="{% url 'Cooking' %}" 
