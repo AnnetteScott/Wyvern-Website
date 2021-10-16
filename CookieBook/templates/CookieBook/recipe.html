@@ -10,23 +10,27 @@
 <style>
     body{
         background-color: black;
-        min-height: 100vh;
     }
     li{
         line-height: 2.2em;
     }
+    article_inner{
+        box-shadow: 0px 0px 5px black;
+    }
 
 </style>
-<article>
+<main>
+    <article>
 
-    <background_image style="background-image: url( {% static '' %}Images/{{recipe.background}} )"></background_image>
-    <article_inner>
-    <article_image style="background-image: url( {% static '' %}Images/{{recipe.background}} )"></article_image>
-        <h1>{{ recipe.title }}</h1>
-            {% for recipe_item in recipe.recipe %}
-                {{ recipe_item|safe }}
-            {% endfor %} 
-    </article_inner>
-</article>
+        <background_image style="background-image: url( {% static '' %}Images/{{recipe.background}} )"></background_image>
+        <article_inner>
+        <article_image style="background-image: url( {% static '' %}Images/{{recipe.background}} )"></article_image>
+            <h1>{{ recipe.title }}</h1>
+                {% for recipe_item in recipe.recipe %}
+                    {{ recipe_item|safe }}
+                {% endfor %} 
+        </article_inner>
+    </article>
+</main>
 {% endblock content %}
 
