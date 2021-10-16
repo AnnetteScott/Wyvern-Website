@@ -14,6 +14,7 @@ def cooking(request):
 def cookingRecipe(request, recipename):
     recipes_cooking = functions.get_recipe_dict("Cooking")
     recipe = None
+    background = None
     for pair in recipes_cooking:
         if pair['url'] == str(recipename):
             recipe = pair
