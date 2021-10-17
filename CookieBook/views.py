@@ -1,38 +1,39 @@
 from django.shortcuts import render
 from . import functions
 
+recipe_type_list = [
+    {"recipeType": "cooking", 'UpperCase': "Cooking"},
+    {"recipeType": "baking", 'UpperCase': "Baking"}
+]
+
 
 # Create your views here.
 def home(request):
-    return render(request, 'CookieBook/home.html')
+    context = {'pages': recipe_type_list} 
+    return render(request, 'CookieBook/home.html', context)
 
-def cooking(request):
-    recipes_cooking = functions.get_recipe_dict("Cooking")
-    context = {'recipes': recipes_cooking, 'page': 'Cooking'}
+def recipeList(request, recipe_type):
+    type_recipe = None
+    for recipeTYPE in recipe_type_list:
+        if recipeTYPE['recipeType'] == str(recipe_type):
+            type_recipe = recipeTYPE
+    filename = type_recipe["UpperCase"]
+    recipes = functions.get_recipe_dict(filename)
+    context = {'recipe': recipes, 'pages': type_recipe}
     return render(request, 'CookieBook/table_of_contents.html', context)
 
-def baking(request):
-    recipes_baking = functions.get_recipe_dict("Baking")
-    context = {'recipes': recipes_baking, 'page': 'Baking'}
-    return render(request, 'CookieBook/table_of_contents.html', context)
+def recipePage(request, recipe_type, recipename):
+    type_recipe = None
+    for recipeTYPE in recipe_type_list:
+        if recipeTYPE['recipeType'] == str(recipe_type):
+            type_recipe = recipeTYPE
+    filename = type_recipe["UpperCase"]
+    recipes_list = functions.get_recipe_dict(filename)
 
-
-def cookingRecipe(request, recipename):
-    recipes_cooking = functions.get_recipe_dict("Cooking")
     recipe = None
-    background = None
-    for pair in recipes_cooking:
+    for pair in recipes_list:
         if pair['url'] == str(recipename):
             recipe = pair
-    context = {'recipe': recipe}
-    return render(request, 'CookieBook/recipe.html', context)
-
-def bakingRecipe(request, recipename):
-    recipes_baking = functions.get_recipe_dict("Baking")
-    recipe = None
-    for pair in recipes_baking:
-        if pair['url'] == str(recipename):
-            recipe = pair
-    context = {'recipe': recipe,}
+    context = {'recipe': recipe, 'pages': type_recipe}
     return render(request, 'CookieBook/recipe.html', context)
     

@@ -1,5 +1,4 @@
 {% extends 'main.html' %}
-
 {% load static %}
 
 {% block content %}
@@ -49,9 +48,10 @@
 <main>
     <content_center class="a_fade_in">
         <h1>Cooke Book</h1>
-        <div>     
-            <a href="{% url 'Cooking' %}"  class="button cookingColour">Cooking</a>
-            <a href="{% url 'Baking' %}"  class="button bakingColour">Baking</a>
+        <div>
+            {% for type in pages %} 
+                <a href="{% url 'CookieBook' %}{{type.recipeType}}"  class="button cookingColour">{{type.UpperCase}}</a>
+            {% endfor %}
         </div>
 
     </content_center>

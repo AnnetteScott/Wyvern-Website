@@ -4,9 +4,7 @@ from . import views
 
 urlpatterns = [ 
     path('cookebook/', views.home, name="CookieBook"),
-    path('cookebook/cooking/', views.cooking, name="Cooking"),
-    path('cookebook/baking/', views.baking, name="Baking"),
+    path('cookebook/<slug:recipe_type>/', views.recipeList, name="Type_Recipe"),
 
-    path('cookebook/cooking/<slug:recipename>/', views.cookingRecipe, name="CookingRecipe"),
-    path('cookebook/baking/<slug:recipename>/', views.bakingRecipe, name="BakingRecipe"),
+    path('cookebook/<slug:recipe_type>/<slug:recipename>/', views.recipePage, name="RecipePage"),
 ]

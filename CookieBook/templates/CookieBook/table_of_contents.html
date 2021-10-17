@@ -1,6 +1,4 @@
 {% extends 'main.html' %}
-{% url 'Cooking' as Cooking %}
-{% url 'Baking' as Baking %}
 {% load static %}
 
 {% block content %}
@@ -43,7 +41,7 @@
     <content_center>
         <grid_medium>
             {% for recipe in recipes %}   
-                <a href="{{page.page}}{{recipe.url}}/" class="button">
+                <a href="{% url 'Type_Recipe' %}" class="button">
                     <card>
                         <img src="" draggable="false">
                         <card_inner>
