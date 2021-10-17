@@ -11,6 +11,19 @@ Instructions:
 - Allow to cool for a minute before consuming
 Background Image: beef_noodles.jpg
 
+Title: Beef Noodles Test
+Ingredients:
+- 1 Fantastic 2 minute noodles
+- 1 tbsp butter
+- 1/8 cup milk
+Cooking Time: 5 minutes
+Instructions:
+- Crush the noodles into a small pot
+- Add the beef flavouring and fill the pot with water, stopping when it's just below the top of the noodles.
+- Add the milk and butter and cook on medium heat until thick and most of the liquid is gone.
+- Allow to cool for a minute before consuming
+Background Image: beef_noodles.jpg
+
 Title: Eggless Pancakes
 Ingredients:
 - 1 Cup All Purpose Flour

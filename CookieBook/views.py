@@ -4,8 +4,6 @@ recipe_type_list = [
     {"recipeType": "cooking", 'UpperCase': "Cooking"},
     {"recipeType": "baking", 'UpperCase': "Baking"}
 ]
-alphabet = ["A", "B", "C", "D", "E", "F", 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-
 
 # Create your views here.
 def home(request):
@@ -19,7 +17,8 @@ def recipeList(request, the_type_of_recipe):
             type_of_recipe = recipe_type
     filename = type_of_recipe["UpperCase"]
     recipes_list = functions.get_recipe_dict(filename)
-    context = {'recipes': recipes_list, 'alphabet': alphabet}
+    valid_letters = functions.check_alphabet(filename)
+    context = {'recipes': recipes_list, 'alphabet': valid_letters}
     return render(request, 'CookieBook/table_of_contents.html', context)
 
 

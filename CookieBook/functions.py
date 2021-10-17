@@ -81,3 +81,16 @@ def get_recipe_dict(filename):
         index += 1
     
     return recipe_dict_list
+
+
+def check_alphabet(filename):
+    alphabet = ["A", "B", "C", "D", "E", "F", 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    recipe_dict = get_recipe_dict(filename)
+    valid_letters = []
+    for index in range(len(recipe_dict)):
+        for letter in alphabet:
+            first_letter = recipe_dict[index]['first_letter']
+            if first_letter == letter:
+                if letter not in valid_letters:
+                    valid_letters.append(letter)
+    return valid_letters
