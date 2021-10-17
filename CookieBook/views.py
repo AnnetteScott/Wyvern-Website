@@ -23,10 +23,10 @@ def recipeList(request, the_type_of_recipe):
     return render(request, 'CookieBook/table_of_contents.html', context)
 
 
-def recipePage(request, recipe_type, recipename):
+def recipePage(request, the_type_of_recipe, recipename):
     type_recipe = None
     for recipeTYPE in recipe_type_list:
-        if recipeTYPE['recipeType'] == str(recipe_type):
+        if recipeTYPE['recipeType'] == str(the_type_of_recipe):
             type_recipe = recipeTYPE
     filename = type_recipe["UpperCase"]
     recipes_list = functions.get_recipe_dict(filename)

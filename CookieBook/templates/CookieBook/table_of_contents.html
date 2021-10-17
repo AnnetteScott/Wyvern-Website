@@ -1,5 +1,5 @@
 {% extends 'main.html' %}
-{% url 'RecipePage' as page_type %}
+
 
 {% load static %}
 
@@ -30,7 +30,7 @@
                         <div>
                         {% for recipe in recipes %}
                             {% if recipe.first_letter == letter %} 
-                                <a href="{{page_type}}{{recipe.url}}/">{{recipe.title}}</a>
+                                <a href="{{recipe.url}}/">{{recipe.title}}</a>
                                 <br>
                             {% endif %}
                         {% endfor %} 
