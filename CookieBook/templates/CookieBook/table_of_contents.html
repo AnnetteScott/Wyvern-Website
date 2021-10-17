@@ -22,16 +22,20 @@
 <main>
     <content_center>
         <grid_medium>
-            {% for letter in recipes %}   
-                <a href="{{page_type}}{{recipe.url}}/">
-                    <card>
-                        <div><p>{{letter.title}}</p></div>
-                        <card_inner>
-                            <info></info>
-                            <p></p>
-                        </card_inner>
-                    </card>
-                </a>
+            {% for letter in alphabet %}   
+                <card>
+                    <div><p>{{letter}}</p></div>
+                    <card_inner>
+                        <info></info>
+                        <div>
+                        {% for recipe in recipes %} 
+                            <a></a>
+                        
+                        <p>This is here</p>
+                        {% endfor %} 
+                        </div>
+                    </card_inner>
+                </card>
             {% endfor %}      
         </grid_medium>
     </content_center>

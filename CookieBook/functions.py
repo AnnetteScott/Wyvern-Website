@@ -74,6 +74,7 @@ def get_recipe_dict(filename):
         recipe_dict = {}
         recipe_dict['url'] = url_name
         recipe_dict['title'] = titles[index]
+        recipe_dict['first_letter'] = titles[index][0]
         recipe_dict['recipe'] = recipe_list[index][1:]
         recipe_dict['background'] = recipe_backgrounds[index]
         recipe_dict_list.append(recipe_dict)
