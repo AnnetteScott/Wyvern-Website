@@ -93,4 +93,5 @@ def check_alphabet(filename):
             if first_letter == letter:
                 if letter not in valid_letters:
                     valid_letters.append(letter)
+    valid_letters.sort()
     return valid_letters

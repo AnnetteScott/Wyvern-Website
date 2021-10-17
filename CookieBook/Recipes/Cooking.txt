@@ -11,18 +11,25 @@ Instructions:
 - Allow to cool for a minute before consuming
 Background Image: beef_noodles.jpg
 
-Title: Beef Noodles Test
+Title: Traditional Pancakes
 Ingredients:
-- 1 Fantastic 2 minute noodles
-- 1 tbsp butter
-- 1/8 cup milk
-Cooking Time: 5 minutes
+- 2 Cup All Purpose Flour
+- 2 tsp Baking Powder
+- 1/2 tsp Salt
+- 2 eggs
+- 1/2 Cup Sugar
+- 1 and 1/2 Cup Milk, approx.
+- 1 tsp Vanilla Extracts
+- Butter
+Cooking Time: 5 to 7 minutes per cake
 Instructions:
-- Crush the noodles into a small pot
-- Add the beef flavouring and fill the pot with water, stopping when it's just below the top of the noodles.
-- Add the milk and butter and cook on medium heat until thick and most of the liquid is gone.
-- Allow to cool for a minute before consuming
-Background Image: beef_noodles.jpg
+- Sift the flour, baking powder and salt into a bowl.
+- In another bowl beat the eggs and sugar with a whisk until pale and thick.
+- Add the egg mixture and the milk to the dry ingredients and mix until just combined.
+- Heat a non-stick frying pan and add a small teaspon of butter
+- Add a ladleful of btter to the pan
+- Once the majority of the bubbles on the pancake have popped, flip and continue to cook until golden brown
+Background Image: trad_pancakes.jpg
 
 Title: Eggless Pancakes
 Ingredients:
@@ -45,23 +52,3 @@ Instructions:
 - When the butter coating in the frying pan is slightly bubbling, pour a ladleful of batter on the pan
 - Once the majority of the bubbles on the pancake have popped, flip and continue to cook until golden brown
 Background Image: eggless_pancake.jpg
-
-Title: Traditional Pancakes
-Ingredients:
-- 2 Cup All Purpose Flour
-- 2 tsp Baking Powder
-- 1/2 tsp Salt
-- 2 eggs
-- 1/2 Cup Sugar
-- 1 and 1/2 Cup Milk, approx.
-- 1 tsp Vanilla Extracts
-- Butter
-Cooking Time: 5 to 7 minutes per cake
-Instructions:
-- Sift the flour, baking powder and salt into a bowl.
-- In another bowl beat the eggs and sugar with a whisk until pale and thick.
-- Add the egg mixture and the milk to the dry ingredients and mix until just combined.
-- Heat a non-stick frying pan and add a small teaspon of butter
-- Add a ladleful of btter to the pan
-- Once the majority of the bubbles on the pancake have popped, flip and continue to cook until golden brown
-Background Image: trad_pancakes.jpg
