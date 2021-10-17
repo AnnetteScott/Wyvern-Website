@@ -12,11 +12,13 @@
 <style>
     body{
         height: 100%;
-        background-color: #0C3566;
+        background-color: var(--primary_color);
     }
     grid_medium card{
         width: 220px;
         min-width: 220px;
+        border: 2px solid black;
+        backdrop-filter: blur(20px);
     }
     card:hover{
         box-shadow: unset;
@@ -30,6 +32,8 @@
     }
     card_inner{
         align-items: center;
+        background-color: unset;
+        box-shadow: unset;
         transition: var(--ls_anim_duration_short) ease all;
     }
     /* card:hover card_inner{
@@ -44,7 +48,7 @@
         height: 24px;
         margin: 0px 0px 5px 0px;
         text-decoration: none;
-        background-color: #0C3566;
+        background-color: var(--ls_darkblue);
         border-radius: var(--ls_border_radius_small);
         transition: var(--ls_anim_duration_short) ease all;
     }
