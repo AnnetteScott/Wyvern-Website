@@ -14,28 +14,8 @@
         height: 100%;
         background-color: #0C3566;
     }
-    .button {
-        background-color: #0C3566;
-        width: fit-content;
-        height: 30px;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: flex;
-        font-size: 20px;
-        border-radius: 5px;
-        margin: 10px 50px;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: 0.1s ease all;
-        
-    }
-     .button:hover {
-        background-color: #3D0C66;
-        opacity: 1.0;
-        transform: scale(1.5);
-        border-radius: 10px;      
+    card:hover{
+        box-shadow: 0px 5px 10px -6px black;
     }
 </style>
 
@@ -43,9 +23,9 @@
     <content_center>
         <grid_medium>
             {% for recipe in recipes %}   
-                <a href="{{page_type}}{{recipe.url}}/" class="button">
+                <a href="{{page_type}}{{recipe.url}}/">
                     <card>
-                        <img src="" draggable="false">
+                        <div><p>{{letter}}</p></div>
                         <card_inner>
                             <h3>{{recipe.title}}</h3>
                             <info></info>
