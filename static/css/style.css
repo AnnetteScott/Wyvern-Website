@@ -1,7 +1,7 @@
 :root{
-  --primary_color: #000;
+  --primary_color: #0A0852;
+  --accent_color: #1B15DA;
   --secondary_color: #000;
-  --tertiary_color: #000;
 }
 
 nav{
