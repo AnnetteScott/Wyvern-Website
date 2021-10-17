@@ -1,11 +1,3 @@
-def get_alphabet_dict():
-    a_dict = {
-        'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [], 'G': [], 'H': [], 'I': [], 
-        'J': [], 'K': [], 'L': [], 'M': [], 'N': [], 'O': [], 'P': [], 'Q': [], 'R': [], 
-        'S': [], 'T': [], 'U': [], 'V': [], 'W': [], 'X': [], 'Y': [], 'Z': []
-    }
-    return a_dict 
-
 #Reads the given filename and splits the contents into a list, \n removed
 def readfile(filename):
     file = "CookieBook/Recipes/" + filename + ".txt"
@@ -88,25 +80,3 @@ def get_recipe_dict(filename):
         index += 1
     
     return recipe_dict_list
-
-
-def alphabet_dict(filename):
-    recipe_dict_list = get_recipe_dict(filename) 
-    alpha_dict = get_alphabet_dict()
-    for index in range(len(recipe_dict_list)):
-        first_letter = recipe_dict_list[index]['title'][0]
-        index_item = [recipe_dict_list[index]['url'], recipe_dict_list[index]['title']]
-        alpha_dict[first_letter].append(index_item)
-    return alpha_dict
-
-def return_keys_with_items(filename):
-    a_dict = alphabet_dict(filename)
-    keys = a_dict.keys()
-    valid_keys = []
-    for key in keys:
-        item = a_dict[key]
-        if item != []:
-            valid_keys.append(key)
-    
-    return valid_keys
-
