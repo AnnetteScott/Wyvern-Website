@@ -25,15 +25,35 @@
     card > div p{
         margin: -50px 0px 0px 0px;
         font-size: 145px;
+        user-select: none;
         transition: var(--ls_anim_duration_short) ease all;
     }
     card_inner{
+        align-items: center;
         transition: var(--ls_anim_duration_short) ease all;
     }
-    card:hover card_inner{
+    /* card:hover card_inner{
         height: 80%;
+    } */
+    card_inner a{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 24px;
+        margin: 0px 0px 5px 0px;
+        text-decoration: none;
+        background-color: #0C3566;
+        border-radius: var(--ls_border_radius_small);
+        transition: var(--ls_anim_duration_short) ease all;
+    }
+    card_inner a:hover{
+        width: 110%;
     }
 </style>
+
+<background_image style="background-image: url(https://gigabyte5671.github.io/projects-site/assets/images/starscape.webp);"></background_image>
 
 <main>
     <content_center>
@@ -42,15 +62,11 @@
                 <card>
                     <div><p>{{letter}}</p></div>
                     <card_inner>
-                        <info></info>
-                        <div>
                         {% for recipe in recipes %}
                             {% if recipe.first_letter == letter %} 
                                 <a href="{{recipe.url}}/">{{recipe.title}}</a>
-                                <br>
                             {% endif %}
-                        {% endfor %} 
-                        </div>
+                        {% endfor %}
                     </card_inner>
                 </card>
             {% endfor %}      
