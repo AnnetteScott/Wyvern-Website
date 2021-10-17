@@ -22,12 +22,11 @@
 <main>
     <content_center>
         <grid_medium>
-            {% for recipe in recipes %}   
+            {% for letter in recipes %}   
                 <a href="{{page_type}}{{recipe.url}}/">
                     <card>
-                        <div><p>{{letter}}</p></div>
+                        <div><p>{{letter.title}}</p></div>
                         <card_inner>
-                            <h3>{{recipe.title}}</h3>
                             <info></info>
                             <p></p>
                         </card_inner>
