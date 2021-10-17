@@ -8,14 +8,14 @@ def home(request):
 
 def cooking(request):
     recipes_cooking = functions.get_recipe_dict("Cooking")
-    context = {'recipes': recipes_cooking}
+    context = {'recipes': recipes_cooking, 'page': 'Cooking'}
     return render(request, 'CookieBook/table_of_contents.html', context)
 
-  
 def baking(request):
     recipes_baking = functions.get_recipe_dict("Baking")
-    context = {'recipes': recipes_baking}
+    context = {'recipes': recipes_baking, 'page': 'Baking'}
     return render(request, 'CookieBook/table_of_contents.html', context)
+
 
 def cookingRecipe(request, recipename):
     recipes_cooking = functions.get_recipe_dict("Cooking")
@@ -33,6 +33,6 @@ def bakingRecipe(request, recipename):
     for pair in recipes_baking:
         if pair['url'] == str(recipename):
             recipe = pair
-    context = {'recipe': recipe}
+    context = {'recipe': recipe,}
     return render(request, 'CookieBook/recipe.html', context)
     
