@@ -97,5 +97,16 @@ def alphabet_dict(filename):
         first_letter = recipe_dict_list[index]['title'][0]
         index_item = [recipe_dict_list[index]['url'], recipe_dict_list[index]['title']]
         alpha_dict[first_letter].append(index_item)
-
     return alpha_dict
+
+def return_keys_with_items(filename):
+    a_dict = alphabet_dict(filename)
+    keys = a_dict.keys()
+    valid_keys = []
+    for key in keys:
+        item = a_dict[key]
+        if item != []:
+            valid_keys.append(key)
+    
+    return valid_keys
+

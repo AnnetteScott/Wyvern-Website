@@ -9,7 +9,13 @@ def home(request):
 def cooking(request):
     recipes_cooking = functions.get_recipe_dict("Cooking")
     context = {'recipes': recipes_cooking}
-    return render(request, 'CookieBook/cooking.html', context)
+    return render(request, 'CookieBook/table_of_contents.html', context)
+
+  
+def baking(request):
+    recipes_baking = functions.get_recipe_dict("Baking")
+    context = {'recipes': recipes_baking}
+    return render(request, 'CookieBook/table_of_contents.html', context)
 
 def cookingRecipe(request, recipename):
     recipes_cooking = functions.get_recipe_dict("Cooking")
@@ -20,12 +26,6 @@ def cookingRecipe(request, recipename):
             recipe = pair
     context = {'recipe': recipe}
     return render(request, 'CookieBook/recipe.html', context)
-
-  
-def baking(request):
-    recipes_baking = functions.get_recipe_dict("Baking")
-    context = {'recipes': recipes_baking}
-    return render(request, 'CookieBook/baking.html', context)
 
 def bakingRecipe(request, recipename):
     recipes_baking = functions.get_recipe_dict("Baking")
