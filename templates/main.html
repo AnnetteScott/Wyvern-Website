@@ -9,6 +9,10 @@
         <link rel="stylesheet" type='text/css' href="https://gigabyte5671.github.io/lightshard/css/lightshard.css">
         <link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}">
         <script type="text/javascript" src="https://gigabyte5671.github.io/lightshard/lib/lightshard.js"></script>
+        <script>
+            Lightshard.settings.softLoad_extensions.initial = "_initial";
+            Lightshard.settings.softLoad_extensions.final = "_final";
+        </script>
     </head>
     <body>
         {% include 'navbar.html' %}
