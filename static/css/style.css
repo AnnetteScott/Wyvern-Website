@@ -6,7 +6,6 @@
 
 nav{
   justify-content: center;
-  backdrop-filter: blur(3px);
 }
 nav background{
   opacity: 0.7;
