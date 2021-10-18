@@ -17,14 +17,7 @@ site_logo:hover{
 center_block{
   border: unset;
 }
-landing_center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-landing_center h1{
+h1{
   font-size: 160px;
   font-weight: 100;
   font-family: 'Bonheur Royale', cursive;
