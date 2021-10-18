@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'homehub',
+    'HomeHub',
     'ChemHub',
     'GitZak',
     'HowToNotDie101',
@@ -63,7 +63,18 @@ ROOT_URLCONF = 'Wyvern.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, 'HomeHub', 'templates'),
+            os.path.join(BASE_DIR, 'ChemHub', 'templates'),
+            os.path.join(BASE_DIR, 'GitZak', 'templates'),
+            os.path.join(BASE_DIR, 'HowToNotDie101', 'templates'),
+            os.path.join(BASE_DIR, 'NettyHub', 'templates'),
+            os.path.join(BASE_DIR, 'ToWay', 'templates'),
+            os.path.join(BASE_DIR, 'CookieBook', 'templates'),
+        
+        
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
