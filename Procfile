@@ -1,1 +1,1 @@
-web:gunicorn Wyvern.wsgi
+web: gunicorn Wyvern.wsgi
