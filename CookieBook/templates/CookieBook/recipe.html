@@ -54,5 +54,9 @@
        document.querySelector("article_inner").style.backgroundColor = swatches["Vibrant"].getHex();
     });
 </script>
+<script>
+    Lightshard.functions.softLoad(document.querySelector("article background_image"));
+    Lightshard.functions.softLoad(document.querySelector("article_image"));
+</script>
 {% endblock content %}
 
