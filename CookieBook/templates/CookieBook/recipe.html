@@ -33,7 +33,7 @@
 
 <script>
     var img = document.createElement('img');
-    img.setAttribute('src', "{% static '' %}Images/{{recipe.background}}")
+    img.setAttribute('src', "{% static '' %}Images/Recipes/{{recipe.background}}")
 
     img.addEventListener('load', function(){
         var vibrant = new Vibrant(img);
