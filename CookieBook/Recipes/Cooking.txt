@@ -29,7 +29,7 @@ Instructions:
 - Heat a non-stick frying pan and add a small teaspon of butter
 - Add a ladleful of btter to the pan
 - Once the majority of the bubbles on the pancake have popped, flip and continue to cook until golden brown
-Background Image: trad_pancakes.jpg
+Background Image: trad_pancakes.webp
 
 Title: Eggless Pancakes
 Ingredients:
