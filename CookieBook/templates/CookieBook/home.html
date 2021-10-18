@@ -11,44 +11,39 @@
     main{
         height: 100%;
     }
-    .button {
-        background-color: var(--secondary_color);
-        width: 100px;
-        height: 30px;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        border-radius: 5px;
-        margin: 10px 50px;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: 0.1s ease all;
-        
+    grid_medium card{
+        width: 150px;
+        min-width: 150px;
+        height: 100px;
+        min-height: 100px;
+        border: 2px solid black;
+        backdrop-filter: blur(20px);
+        justify-content: center;
     }
-    .button:hover {
-        opacity: 1.0;
-        transform: scale(1.5);
-        border-radius: 10px;
-        background-color: var(--primary_color)
+    card > div p{
+        margin: -50px 0px 0px 0px;
+        font-size: 145px;
+        user-select: none;
+        transition: var(--ls_anim_duration_short) ease all;
+    }
 
-        
-    }
 </style>
 
 <background_image style="background-image:url({% static 'Images/CookieHome.png' %});filter:blur(4px);"></background_image>
 
 <main>
+    <h1>Cooke Book</h1>
     <content_center>
-        <h1>Cooke Book</h1>
-        <div>
+        <grid_medium>
             {% for type in recipe_type %} 
-                <a href="{% url 'CookieBook' %}{{type.recipeType}}"  class="button">{{type.UpperCase}}</a>
-            {% endfor %}
-        </div>
-
+                <a href="{% url 'CookieBook' %}{{type.recipeType}}"> 
+                    <card>
+                        {{type.UpperCase}} 
+                    </card>
+                </a> 
+            {% endfor %}      
+        </grid_medium>
     </content_center>
 </main>
+
 {% endblock content %}
