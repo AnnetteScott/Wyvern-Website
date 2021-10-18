@@ -20,9 +20,9 @@
 <main>
     <article>
 
-        <background_image style="background-image: url( {% static '' %}Images/{{recipe.background}} )"></background_image>
+        <background_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></background_image>
         <article_inner>
-        <article_image style="background-image: url( {% static '' %}Images/{{recipe.background}} )"></article_image>
+        <article_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></article_image>
             <h1>{{ recipe.title }}</h1>
                 {% for recipe_item in recipe.recipe %}
                     {{ recipe_item|safe }}
