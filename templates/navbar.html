@@ -1,0 +1,58 @@
+{% url 'NettyHub' as NettyHub %}
+{% url 'HomeHub' as HomeHub %}
+{% url 'GitZak' as GitZak %}
+{% url 'ChemHub' as ChemHub %}
+{% url 'ToWay' as ToWay %}
+{% url 'HowToNotDie101' as HowToNotDie101 %}
+{% url 'CookieBook' as CookieBook %}
+{% load static %}
+
+
+<nav>
+  <background></background>
+  <site_logo><a href="/"><img src="{% static 'Images/site_logo.png' %}" draggable="false"></a></site_logo>
+  <navlinks>
+    <a href="/" 
+    {% if request.path == HomeHub  %}
+        class="active"
+    {% endif %}>
+    <p>Home</p></a>
+
+    <a href="{% url 'NettyHub' %}" 
+    {% if NettyHub in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Netty</p></a>
+
+    <a href="{% url 'GitZak' %}"
+    {% if GitZak in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Giga</p></a>
+
+    <a href="{% url 'ChemHub' %}" 
+    {% if ChemHub in request.path %}
+      class="active"
+    {% endif %}>
+    <p>ChemHub</p></a>
+
+    <a href="{% url 'CookieBook' %}" 
+    {% if CookieBook in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Cooke Book</p></a>
+
+    <a href="{% url 'ToWay' %}" 
+    {% if ToWay in request.path  %}
+      class="active"
+    {% endif %}>
+    <p>Which Way?</p></a>
+
+    <a href="{% url 'HowToNotDie101' %}" 
+    {% if HowToNotDie101 in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Hazards 101</p></a>
+
+  </navlinks>
+</nav>
