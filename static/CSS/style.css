@@ -1,0 +1,24 @@
+:root{
+  --primary_color: #0A0852;
+  --accent_color: #4CC2FF;
+  --secondary_color: #1B15DA;
+}
+
+nav{
+  justify-content: center;
+}
+nav background{
+  opacity: 0.7;
+}
+site_logo:hover{
+  width: calc(var(--ls_nav_height) + 10px);
+}
+center_block{
+  border: unset;
+}
+h1{
+  font-size: 160px;
+  font-weight: 100;
+  font-family: 'Bonheur Royale', cursive;
+  letter-spacing: 10px;
+}
