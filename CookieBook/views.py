@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from . import functions
-recipe_type_list = [
-    {"recipeType": "cooking", 'UpperCase': "Cooking"},
-    {"recipeType": "baking", 'UpperCase': "Baking"}
-]
+recipe_type_list = functions.get_all_recipe_file_names()
 
 # Create your views here.
 def home(request):
+    global recipe_type_list 
+    recipe_type_list = functions.get_all_recipe_file_names()
     context = {'recipe_type': recipe_type_list} 
     return render(request, 'CookieBook/home.html', context)
 
