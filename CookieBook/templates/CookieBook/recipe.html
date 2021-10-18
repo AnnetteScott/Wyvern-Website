@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+<script src="{% static 'js/vibrant.min.js' %}"></script>
 
 
 <style>
@@ -29,5 +30,29 @@
         </article_inner>
     </article>
 </main>
+
+<script>
+    var img = document.createElement('img');
+    img.setAttribute('src', "{% static '' %}Images/{{recipe.background}}")
+
+    img.addEventListener('load', function(){
+        var vibrant = new Vibrant(img);
+        var swatches = vibrant.swatches()
+        for(var swatch in swatches){
+            if(swatches.hasOwnProperty(swatch) && swatches[swatch]){
+                console.log(swatch, swatches[swatch].getHex());
+            }
+        }
+        /*
+        * Results into:
+        * Vibrant
+        * Muted
+        * DarkVibrant
+        * DarkMuted
+        * LightVibrant
+        */
+       document.querySelector("article_inner").style.backgroundColor = swatches["Vibrant"].getHex();
+    });
+</script>
 {% endblock content %}
 
