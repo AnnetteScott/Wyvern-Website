@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from . import functions
 recipe_type_list = functions.get_all_recipe_file_names()
+recipes_list = []
+valid_letters = []
 
 # Create your views here.
 def home(request):
@@ -15,6 +17,8 @@ def recipeList(request, the_type_of_recipe):
         if recipe_type['recipeType'] == str(the_type_of_recipe):
             type_of_recipe = recipe_type
     filename = type_of_recipe["UpperCase"]
+    global recipes_list
+    global valid_letters
     recipes_list = functions.get_recipe_dict(filename)
     valid_letters = functions.check_alphabet(filename)
     context = {'recipes': recipes_list, 'alphabet': valid_letters}
@@ -22,15 +26,9 @@ def recipeList(request, the_type_of_recipe):
 
 
 def recipePage(request, the_type_of_recipe, recipename):
-    type_recipe = None
-    for recipeTYPE in recipe_type_list:
-        if recipeTYPE['recipeType'] == str(the_type_of_recipe):
-            type_recipe = recipeTYPE
-    filename = type_recipe["UpperCase"]
-    recipes_list = functions.get_recipe_dict(filename)
     for pair in recipes_list:
         if pair['url'] == str(recipename):
             recipe = pair
-    context = {'recipe': recipe, 'pages': type_recipe}
+    context = {'recipe': recipe}
     return render(request, 'CookieBook/recipe.html', context)
 
