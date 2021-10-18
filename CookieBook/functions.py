@@ -95,3 +95,17 @@ def check_alphabet(filename):
                     valid_letters.append(letter)
     valid_letters.sort()
     return valid_letters
+
+import glob
+
+def get_all_recipe_file_names():
+    raw_list = []
+    for filename in glob.iglob('CookieBook/Recipes/*.txt', recursive=True):
+        raw_list.append(filename[19:-4])
+    
+    files_list = []
+    for file in raw_list:
+        file_lower = file.lower()
+        a_dict = {'recipeType': file_lower, 'UpperCase': file}
+        files_list.append(a_dict)
+    return files_list
