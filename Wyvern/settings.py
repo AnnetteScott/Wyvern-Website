@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lq4e(b74l$5q_93gkaxyi24o96+^x_)+or#ceo#$e5yo=y5fgn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https://bluewyvern.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'bluewyvern.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
