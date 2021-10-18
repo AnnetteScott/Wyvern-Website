@@ -26,9 +26,10 @@ def recipeList(request, the_type_of_recipe):
 
 
 def recipePage(request, the_type_of_recipe, recipename):
-    for pair in recipes_list:
-        if pair['url'] == str(recipename):
-            recipe = pair
+    recipe = None
+    for dict_obj in recipes_list:
+        if dict_obj['url'] == str(recipename):
+            recipe = dict_obj
     context = {'recipe': recipe}
     return render(request, 'CookieBook/recipe.html', context)
 

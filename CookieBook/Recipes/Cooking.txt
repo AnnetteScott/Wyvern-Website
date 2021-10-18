@@ -9,7 +9,7 @@ Instructions:
 - Add the beef flavouring and fill the pot with water, stopping when it's just below the top of the noodles.
 - Add the milk and butter and cook on medium heat until thick and most of the liquid is gone.
 - Allow to cool for a minute before consuming
-Background Image: beef_noodles.jpg
+Background Image: beef_noodles.webp
 
 Title: Traditional Pancakes
 Ingredients:
