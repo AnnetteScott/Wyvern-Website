@@ -2,6 +2,7 @@ from django.shortcuts import render
 from . import functions
 recipe_type_list = functions.get_all_recipe_file_names()
 recipes_list = []
+filename = ""
 
 # Create your views here.
 def home(request):
@@ -25,6 +26,12 @@ def recipeList(request, the_type_of_recipe):
 
 def recipePage(request, the_type_of_recipe, recipename):
     recipe = None
+    type_of_recipe = None
+    for recipe_type in recipe_type_list:
+        if recipe_type['recipeType'] == str(the_type_of_recipe):
+            type_of_recipe = recipe_type
+    filename = type_of_recipe["UpperCase"]
+    recipes_list = functions.get_recipe_dict(filename)
     for dict_obj in recipes_list:
         if dict_obj['url'] == str(recipename):
             recipe = dict_obj
