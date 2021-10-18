@@ -9,7 +9,7 @@ Instructions:
 - Add the beef flavouring and fill the pot with water, stopping when it's just below the top of the noodles.
 - Add the milk and butter and cook on medium heat until thick and most of the liquid is gone.
 - Allow to cool for a minute before consuming
-Background Image: beef_noodles-initial.webp
+Background Image: beef_noodles_initial.webp
 
 Title: Traditional Pancakes
 Ingredients:
@@ -29,7 +29,7 @@ Instructions:
 - Heat a non-stick frying pan and add a small teaspon of butter
 - Add a ladleful of btter to the pan
 - Once the majority of the bubbles on the pancake have popped, flip and continue to cook until golden brown
-Background Image: trad_pancakes-initial.webp
+Background Image: trad_pancakes_initial.webp
 
 Title: Eggless Pancakes
 Ingredients:
@@ -51,4 +51,4 @@ Instructions:
 - Once the butter is melted, add it to the rest of the pancake batter and mix (You do not have to get it all as butter is needed in the frying pan)
 - When the butter coating in the frying pan is slightly bubbling, pour a ladleful of batter on the pan
 - Once the majority of the bubbles on the pancake have popped, flip and continue to cook until golden brown
-Background Image: eggless_pancake-initial.webp
+Background Image: eggless_pancake_initial.webp
