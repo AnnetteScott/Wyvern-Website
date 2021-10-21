@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% load static %}
+{% load split_newline %}
 
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +20,25 @@
 </style>
 <main>
     <article>
-
         <background_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></background_image>
         <article_inner>
-        <article_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></article_image>
+            <article_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></article_image>      
             <h1>{{ recipe.title }}</h1>
-                {% for recipe_item in recipe.recipe %}
-                    {{ recipe_item|safe }}
-                {% endfor %} 
+            <h2>Ingredients:</h2>
+            {% for ingred in recipe.ingredients|split_newline %}
+                <li>{{ingred}}</li>
+            {% endfor %}
+            <h2>Cooking Time: {{recipe.cooking_time}}</h2>
+            <h2>Directions:</h2>
+            {% for dir in recipe.directions|split_newline %}
+                <li>{{dir}}</li>
+            {% endfor %}
         </article_inner>
     </article>
 </main>
+
+
+
 
 <script>
     var img = document.createElement('img');
