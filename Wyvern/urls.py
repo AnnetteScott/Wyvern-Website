@@ -11,4 +11,5 @@ urlpatterns = [
     path('', include('NettyHub.urls')),
     path('', include('ToWay.urls')),
     path('', include('CookieBook.urls')),
+    path('', include('Arcade.urls')),
 ]
