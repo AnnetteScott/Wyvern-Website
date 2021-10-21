@@ -66,7 +66,7 @@
                 <card>
                     <div><p>{{letter}}</p></div>
                     <card_inner>
-                        {% for recipe in recipes %}
+                        {% for recipe in recipe %}
                             {% if recipe.first_letter == letter %} 
                                 <a href="{{recipe.url}}/">{{recipe.title}}</a>
                             {% endif %}
