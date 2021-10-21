@@ -3,13 +3,12 @@ from django.db import models
 # Create your models here.
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=400, null=True, blank=True)
+    description = models.TextField(max_length=400, blank=True)
     cooking_time = models.CharField(max_length=50)
-    ingredients = models.CharField(max_length=1000)
-    directions = models.CharField(max_length=2000)
+    ingredients = models.TextField(max_length=1000)
+    directions = models.TextField(max_length=2000)
     tag = models.CharField(max_length=20)
-    url = models.CharField(max_length=50)
-    first_letter = models.CharField(max_length=50)
+    url = models.CharField(max_length=50, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
