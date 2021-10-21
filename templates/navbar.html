@@ -5,6 +5,7 @@
 {% url 'ToWay' as ToWay %}
 {% url 'HowToNotDie101' as HowToNotDie101 %}
 {% url 'CookieBook' as CookieBook %}
+{% url 'Arcade' as Arcade %}
 {% load static %}
 
 
@@ -53,6 +54,12 @@
       class="active"
     {% endif %}>
     <p>Hazards 101</p></a>
+    
+    <a href="{% url 'Arcade' %}" 
+    {% if Arcade in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Arcade</p></a>
 
   </navlinks>
 </nav>
