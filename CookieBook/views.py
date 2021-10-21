@@ -29,7 +29,7 @@ def recipeList(request, the_type_of_recipe):
         if recipe_obj.tag.lower() == str(the_type_of_recipe):
             recipe_page_list.append(recipe_obj)
             alphabet.append(recipe_obj.first_letter) 
-    alphabet = alphabet.sort()
+
     context = {'alphabet': alphabet, 'recipe': recipe_page_list}
     return render(request, 'CookieBook/table_of_contents.html', context)
 
