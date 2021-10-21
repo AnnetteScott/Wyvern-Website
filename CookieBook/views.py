@@ -29,7 +29,7 @@ def recipeList(request, the_type_of_recipe):
         if recipe_obj.tag.lower() == str(the_type_of_recipe):
             first_letter = recipe_obj.title[0]
             recipe_page_list.append(recipe_obj)
-            valid_letters.append(str(recipe_obj.title[0]))
+            valid_letters.append(str(first_letter))
   
     valid_letters.sort()
     context = {'alphabet': valid_letters, 'recipe': recipe_page_list}
