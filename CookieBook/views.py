@@ -2,6 +2,7 @@ from django.shortcuts import render
 from . import functions
 from .models import Recipe
 
+recipe_page_list = []
 
 # Create your views here.
 def home(request):
@@ -22,6 +23,7 @@ def home(request):
 
 def recipeList(request, the_type_of_recipe):
     list_ids = list(Recipe.objects.values_list('id', flat=True).order_by('id'))
+    global recipe_page_list
     recipe_page_list = []
     valid_letters = []
     for index in range(len(list_ids)):
@@ -36,7 +38,17 @@ def recipeList(request, the_type_of_recipe):
     return render(request, 'CookieBook/table_of_contents.html', context)
 
 
-def recipePage(request, the_type_of_recipe, recipename):
-    context = {}
+def recipePage(request, the_type_of_recipe, recipeurl):
+    recipe_page_data = None
+    list_ids = list(Recipe.objects.values_list('id', flat=True).order_by('id'))
+    for index in range(len(list_ids)):
+        recipe_obj = Recipe.objects.get(id=list_ids[index])
+        url = ''
+        if recipe_obj.url == '' or recipe_obj.url == 'null':
+            url = (recipe_obj.title.replace(' ', '-')).lower()
+        if recipe_obj.url == recipeurl or url == recipeurl:
+            recipe_page_data = recipe_obj
+            break
+    context = {'recipe': recipe_page_data}
     return render(request, 'CookieBook/recipe.html', context)
 
