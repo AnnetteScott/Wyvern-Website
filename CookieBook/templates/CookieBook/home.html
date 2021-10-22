@@ -36,7 +36,7 @@
     <content_center>
         <grid_medium>
             {% for type in recipe_type %} 
-                <a href="{% url 'CookieBook' %}{{type.recipeType}}"> 
+                <a href="{% url 'CookieBook' %}{{type.recipeType}}/"> 
                     <card>
                         {{type.UpperCase}} 
                     </card>
