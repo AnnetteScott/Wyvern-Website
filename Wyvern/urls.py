@@ -12,4 +12,5 @@ urlpatterns = [
     path('', include('ToWay.urls')),
     path('', include('CookieBook.urls')),
     path('', include('Arcade.urls')),
+    path('', include('WhatToDo.urls')),
 ]

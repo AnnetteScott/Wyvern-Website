@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+
+<style>
+    main{
+        height: 100%;
+    }
+</style>
+
+<background_image style="background-image:url({% static 'Images/NettyHome_background_initial.webp' %});"></background_image>
+
+<main>
+    <content_center>
+        <h1>What To Do?</h1>
+        <h3>Coming Soon!</h3>
+    </content_center>
+</main>
+{% endblock content %}
