@@ -12,12 +12,27 @@
     main{
         height: 100%;
     }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    label{
+        margin: 0px 0px 20px 0px;
+    }
+    textarea{
+        backdrop-filter: blur(15px);
+    }
+    input[type=submit]{
+        margin: 20px 0px 0px 0px;
+    }
 </style>
 
 <background_image style="background-image:url({% static 'Images/NettyHome_background_initial.webp' %});"></background_image>
 
 <main>
     <content_center>
+        <h1>What To Do?</h1>
         <form action="{% url 'WhatToDoResult' %}" method="post">
             {% csrf_token %}
             {{ form }}
