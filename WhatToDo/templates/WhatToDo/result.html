@@ -12,13 +12,19 @@
     main{
         height: 100vh;
     }
+    h3{
+        font-size: 50px;
+    }
+    .a_fade_in{
+        animation-duration: var(--ls_anim_duration_long);
+    }
 </style>
 
 <background_image style="background-image: url( {% static 'Images/starscape_initial.webp' %} );"></background_image>
 
 <main>
     <content_center>
-        <h1><b>{{ chosen }}</b></h1>
+        <h3 class="a_fade_in"><b>{{ chosen }}</b></h3>
     </content_center>
 </main>
 
