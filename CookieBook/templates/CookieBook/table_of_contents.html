@@ -58,7 +58,7 @@
     }
 </style>
 
-<background_image style="background-image: url(https://gigabyte5671.github.io/projects-site/assets/images/starscape.webp);"></background_image>
+<background_image style="background-image: url( {% static 'Images/starscape_initial.webp' %} );"></background_image>
 
 <main>
     <content_center>
@@ -83,5 +83,7 @@
     </content_center>
 </main>
 
-
+<script>
+    Lightshard.functions.softLoad(document.querySelector("background_image"));
+</script>
 {% endblock content %}
