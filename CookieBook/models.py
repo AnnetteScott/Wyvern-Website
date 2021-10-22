@@ -9,8 +9,8 @@ class Recipe(models.Model):
     directions = models.TextField(max_length=2000)
     tag = models.CharField(max_length=20)
     url = models.CharField(max_length=50, blank=True)
-    img_initial = models.FileField(upload_to='static/Images/Recipe', null=True, blank=True)
-    img_final = models.FileField(upload_to='static/Images/Recipe', null=True, blank=True)
+    img_initial = models.FileField(upload_to='static/Images/CookieBook_Recipe', null=True, blank=True)
+    img_final = models.FileField(upload_to='static/Images/CookieBook_Recipe', null=True, blank=True)
 
 
 
