@@ -49,12 +49,12 @@
         <article_inner>
             <article_image style="background-image: url( {% static '' %}{{recipe.img_initial|remove_static}} )"></article_image>      
             <h1>{{ recipe.title }}</h1>
-            <h2>Ingredients:</h2>
+            <h2><b>Ingredients:</b></h2>
             {% for ingred in recipe.ingredients|split_newline %}
                 <li>{{ingred}}</li>
             {% endfor %}
-            <h2>Cooking Time: {{recipe.cooking_time}}</h2>
-            <h2>Directions:</h2>
+            <h2><b>Cooking Time: {{recipe.cooking_time}}</b></h2>
+            <h2><b>Directions:</b></h2>
             {% for dir in recipe.directions|split_newline %}
                 <li>{{dir}}</li>
             {% endfor %}
