@@ -9,6 +9,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
 <script src="{% static 'js/vibrant.min.js' %}"></script>
 
+<script>
+    var img = document.createElement('img');
+    img.setAttribute('src', "{% static '' %}{{recipe.img_initial|remove_static}}")
+
+    img.addEventListener('load', function(){
+        var vibrant = new Vibrant(img);
+        var swatches = vibrant.swatches()
+        for(var swatch in swatches){
+            if(swatches.hasOwnProperty(swatch) && swatches[swatch]){
+                console.log(swatch, swatches[swatch].getHex());
+            }
+        }
+        /*
+        * Results into:
+        * Vibrant
+        * Muted
+        * DarkVibrant
+        * DarkMuted
+        * LightVibrant
+        */
+       document.querySelector("article_inner").style.backgroundColor = swatches["Vibrant"].getHex();
+    });
+</script>
+
 
 <style>
     li{
@@ -39,30 +63,6 @@
 </main>
 
 
-
-<script>
-    var img = document.createElement('img');
-    img.setAttribute('src', "{% static '' %}{{recipe.img_initial|remove_static}}")
-
-    img.addEventListener('load', function(){
-        var vibrant = new Vibrant(img);
-        var swatches = vibrant.swatches()
-        for(var swatch in swatches){
-            if(swatches.hasOwnProperty(swatch) && swatches[swatch]){
-                console.log(swatch, swatches[swatch].getHex());
-            }
-        }
-        /*
-        * Results into:
-        * Vibrant
-        * Muted
-        * DarkVibrant
-        * DarkMuted
-        * LightVibrant
-        */
-       document.querySelector("article_inner").style.backgroundColor = swatches["Vibrant"].getHex();
-    });
-</script>
 <script>
     Lightshard.functions.softLoad(document.querySelector("article background_image"));
     Lightshard.functions.softLoad(document.querySelector("article_image"));
