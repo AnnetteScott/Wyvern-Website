@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% load split_newline %}
+{% load remove_static %}
 
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +21,9 @@
 </style>
 <main>
     <article>
-        <background_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></background_image>
+        <background_image style="background-image: url( {% static '' %}{{recipe.img_initial|remove_static}} )"></background_image>
         <article_inner>
-            <article_image style="background-image: url( {% static '' %}Images/Recipes/{{recipe.background}} )"></article_image>      
+            <article_image style="background-image: url( {% static '' %}{{recipe.img_initial|remove_static}} )"></article_image>      
             <h1>{{ recipe.title }}</h1>
             <h2>Ingredients:</h2>
             {% for ingred in recipe.ingredients|split_newline %}
@@ -39,10 +40,9 @@
 
 
 
-
 <script>
     var img = document.createElement('img');
-    img.setAttribute('src', "{% static '' %}Images/Recipes/{{recipe.background}}")
+    img.setAttribute('src', "{% static '' %}{{recipe.img_initial|remove_static}}")
 
     img.addEventListener('load', function(){
         var vibrant = new Vibrant(img);
