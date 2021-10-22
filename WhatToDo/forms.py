@@ -1,4 +1,4 @@
 from django import forms
 
 class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
+    user_input = forms.Textarea(label='user input', max_length=1000)
