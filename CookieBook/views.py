@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from . import functions
 from .models import Recipe
 
 recipe_page_list = []
