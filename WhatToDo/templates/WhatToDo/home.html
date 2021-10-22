@@ -18,8 +18,11 @@
 
 <main>
     <content_center>
-        <h1>What To Do?</h1>
-        <h3>Coming Soon!</h3>
+        <form action="{% url 'WhatToDoResult' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
     </content_center>
 </main>
 
