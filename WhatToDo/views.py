@@ -15,11 +15,6 @@ def result(request):
 
 
 def home(request):
-    if request.method == 'POST':
-        global form
-        form = UserInputForm(request.POST)
-    else:
-        form = UserInputForm()
-
+    form = UserInputForm()
     context = {'form': form}
     return render(request, 'WhatToDo/home.html', context)
