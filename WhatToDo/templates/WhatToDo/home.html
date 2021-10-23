@@ -27,6 +27,12 @@
         margin: 20px 0px 0px 0px;
         backdrop-filter: blur(15px);
     }
+    h3{
+        font-size: 50px;
+    }
+    .a_fade_in{
+        animation-duration: var(--ls_anim_duration_long);
+    }
 </style>
 
 <background_image style="background-image: url( {% static 'Images/starscape_initial.webp' %} );"></background_image>
@@ -34,11 +40,20 @@
 <main>
     <content_center>
         <h1>What To Do?</h1>
-        <form action="{% url 'WhatToDoResult' %}" method="post">
+        <form action="{% url 'WhatToDo' %}" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Submit">
-        </form>
+            <input type="submit" value="{{Button_Value}}">
+        </form>    
+    </content_center>
+    <br>
+    <br>
+    <br>
+    <content_center>
+        {% if chosen != None %}
+            <h2>Your Result Is:<h2>
+            <h3 class="a_fade_in"><b>{{ chosen }}</b></h3>
+        {% endif %}
     </content_center>
 </main>
 
