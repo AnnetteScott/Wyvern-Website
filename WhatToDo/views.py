@@ -14,7 +14,7 @@ def home(request):
             user_input = (request.POST.get('user_input')).split('\n')
             random_num = random.randrange(0, len(user_input))
             chosen = user_input[random_num]
-            button_value = "Resubmit"
+            button_value = "Re-Submit"
     else:
         form = UserInputForm()
         button_value = "Submit"
