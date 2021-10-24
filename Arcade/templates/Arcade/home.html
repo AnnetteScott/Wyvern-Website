@@ -1,6 +1,6 @@
 {% extends 'main.html' %}
-
 {% load static %}
+{% load to_url %}
 
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,17 +9,81 @@
 
 
 <style>
-    main{
+    body{
         height: 100%;
+        background-color: var(--primary_color);
     }
+    grid_medium card{
+        width: 220px;
+        min-width: 220px;
+        border: 2px solid black;
+        backdrop-filter: blur(20px);
+    }
+    card:hover{
+        box-shadow: unset;
+        transform: unset;
+    }
+        card > div p{
+        margin: -50px 0px 0px 0px;
+        font-size: 145px;
+        user-select: none;
+        transition: var(--ls_anim_duration_short) ease all;
+    }
+    card_inner{
+        align-items: center;
+        background-color: unset;
+        box-shadow: unset;
+        transition: var(--ls_anim_duration_short) ease all;
+    }
+    /* card:hover card_inner{
+        height: 80%;
+    } */
+    card_inner a{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 24px;
+        margin: 0px 0px 5px 0px;
+        text-decoration: none;
+        background-color: var(--ls_darkblue);
+        border-radius: var(--ls_border_radius_small);
+        transition: var(--ls_anim_duration_short) ease all;
+    }
+    card_inner a:hover{
+        width: 110%;
+    }
+
 </style>
 
-<background_image style="background-image:url({% static 'Images/NettyHome_background_initial.webp' %});"></background_image>
+<background_image style="background-image: url( {% static 'Images/starscape_initial.webp' %} );"></background_image>
 
 <main>
     <content_center>
-        <h1>Arcade</h1>
-        <h3>Coming Soon!</h3>
+        <grid_medium>
+            {% for game in games_list %}
+                {% if game.url != '' %} 
+                    <a href="{{game.url}}/">
+                        <card>
+                            <div><p>Hi</p></div>
+                            <card_inner>
+                                <h3>{{game.title}}</h3>
+                            </card_inner>
+                        </card>                   
+                    </a>
+                {% else %}
+                    <a href="{{ game.title|to_url }}/">                        
+                        <card>
+                            <div><p>Hi</p></div>
+                            <card_inner>
+                                <h3>{{game.title}}</h3>
+                            </card_inner>
+                        </card>                   
+                    </a>
+                {% endif %}
+            {% endfor %}      
+        </grid_medium>
     </content_center>
 </main>
 
