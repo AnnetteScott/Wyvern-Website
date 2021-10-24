@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'CookieBook',
     'Arcade',
     'WhatToDo',
+    'lib',
+    
 ]
 
 MIDDLEWARE = [
