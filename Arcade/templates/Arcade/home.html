@@ -66,7 +66,6 @@
                 {% if game.url != '' %} 
                     <a href="{{game.url}}/">
                         <card>
-                            <div><p>Hi</p></div>
                             <card_inner>
                                 <h3>{{game.title}}</h3>
                             </card_inner>
@@ -75,7 +74,6 @@
                 {% else %}
                     <a href="{{ game.title|to_url }}/">                        
                         <card>
-                            <div><p>Hi</p></div>
                             <card_inner>
                                 <h3>{{game.title}}</h3>
                             </card_inner>
