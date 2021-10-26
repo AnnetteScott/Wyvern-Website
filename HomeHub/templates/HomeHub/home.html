@@ -1,27 +1,20 @@
 {% extends 'main.html' %}
-
 {% load static %}
-
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
-
-
 <style>
     main{
         height: 100vh;
     }
 </style>
-
 <background_image style="background-image:url({% static 'Images/home_background_initial.webp' %});filter:blur(7px);"></background_image>
-
 <main>
     <content_center>
         <h1>WYVERN</h1>
     </content_center>
 </main>
-
 <script>
     Lightshard.functions.softLoad(document.querySelector("background_image"));
 </script>
