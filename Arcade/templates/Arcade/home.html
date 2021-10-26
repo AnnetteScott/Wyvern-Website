@@ -1,13 +1,10 @@
 {% extends 'main.html' %}
 {% load static %}
 {% load common_tags %}
-
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
-
-
 <style>
     body{
         height: 100%;
@@ -56,9 +53,7 @@
     }
 
 </style>
-
 <background_image style="background-image: url( {% static 'Images/starscape_initial.webp' %} );"></background_image>
-
 <main>
     <content_center>
         <grid_medium>
@@ -84,7 +79,6 @@
         </grid_medium>
     </content_center>
 </main>
-
 <script>
     Lightshard.functions.softLoad(document.querySelector("background_image"));
 </script>
