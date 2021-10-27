@@ -13,3 +13,10 @@ class GamesList(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+class ExplodingKactiScore(models.Model):
+    score = models.IntegerField()    
+    name = models.CharField(max_length=8, blank=True)
+    
+    def __str__(self):
+        return str(self.name)
