@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import GamesList
+from .Games.ExplodingKacti import process_score
 
 # Create your views here.
 def home(request):
@@ -23,6 +24,7 @@ def gamePage(request, gameurl):
     if game_status == True:
         ifame_src = "https://notnatural21.github.io/" + iframe_title + "/"
         context = {'title': title, 'ifame_src': ifame_src, 'status': game_status}
+        process_score.updateScores()
         return render(request, 'Arcade/gamepage.html', context)
     else:
         return render(request, 'Arcade/gamedownpage.html')
