@@ -209,6 +209,7 @@ function showEndScreen(){
 
 function submitScore(){
   if(can_submit_score === 1){
+    can_submit_score = 0;
     transmitToServer({'name': playername, 'score': final_score});
   }
 }
