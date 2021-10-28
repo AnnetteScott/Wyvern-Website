@@ -15,17 +15,17 @@ def gamePage(request, gameurl):
         url = ''
         if game['url'] == '' or game['url'] == 'null':
             url = (game['title'].replace(' ', '-')).lower()
+
         if game['url'] == gameurl or url == gameurl:
             title = game['title']
-            iframe_title = game['title'].replace(' ', '-')
             game_status = game['online']
             break
 
     if game_status == True:
-        ifame_src = "https://notnatural21.github.io/" + iframe_title + "/"
-        context = {'title': title, 'ifame_src': ifame_src, 'status': game_status}
+
+        context = {'title': title, 'status': game_status}
         process_score.updateScores()
-        return render(request, 'Arcade/gamepage.html', context)
+        return render(request, title + '.html', context)
     else:
         return render(request, 'Arcade/gamedownpage.html')
 
