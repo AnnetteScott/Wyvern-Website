@@ -186,9 +186,19 @@ function gameOver(){
       elem.classList.add("a_cactus_celebration");
     });
     spawnHitText({x: center_of_game.x - 125, y: center_of_game.y - 100}, '202020', 36, "GAME&nbsp;OVER");
-  }
 
+    showEndScreen();
+  }
 }
+
+
+function showEndScreen(){
+  var name = '';
+  var final_score = parseInt(score_elem.innerHTML);
+
+  transmitToServer({'name': name, 'score': final_score});
+}
+
 
 function handleClickEvent(e){
   var elem = e.target;
