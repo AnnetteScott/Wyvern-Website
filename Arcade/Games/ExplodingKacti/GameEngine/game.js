@@ -192,6 +192,7 @@ function gameOver(){
 
 var playername = 'AAA';
 var final_score = 0;
+var can_submit_score = 1;
 function updatePlayerName(event){
   playername = event.target.value;
 }
@@ -203,6 +204,13 @@ function showEndScreen(){
   document.querySelector("#end_screen_score").innerHTML += final_score;
 
   endscreen.classList.remove("end_screen_invisible");
+}
+
+
+function submitScore(){
+  if(can_submit_score === 1){
+    transmitToServer({'name': playername, 'score': final_score});
+  }
 }
 
 
