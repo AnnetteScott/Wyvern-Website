@@ -192,7 +192,7 @@ function gameOver(){
 
 
 function showEndScreen(){
-  var name = '';
+  var name = 'Jane';
   var final_score = parseInt(score_elem.innerHTML);
 
   transmitToServer({'name': name, 'score': final_score});
