@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import GamesList, ExplodingKactiScore
+from django.http import HttpResponse
 from .Games.ExplodingKacti import process_score
 
 # Create your views here.
@@ -32,8 +33,7 @@ def gamePage(request, gameurl):
 
 def add_score(request):
     if request.method == 'POST':
-        kacti_data = ExplodingKactiScore.objects.get()
-        kacti_data.score = request.POST['score']
-        kacti_data.name = request.POST['name']
-        kacti_data.save()
+        ExplodingKactiScore.objects.create(score=request.POST['score'], name=request.POST['name'])
         process_score.updateScores()
+        return HttpResponse('success')
+    return HttpResponse('error')
