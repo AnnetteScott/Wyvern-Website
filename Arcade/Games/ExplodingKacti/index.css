@@ -1,0 +1,289 @@
+*{ 
+  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: pixelated;                 /* Chrome                         */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+  user-select: none;
+}
+
+game{
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: block;
+  background-color: white;
+  overflow: hidden;
+}
+
+game_background{
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: block;
+  background-color: #e5cb5c;
+  background-image: url('Images/sand_background.png');
+  background-size: 905px;
+}
+
+hittext{
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  user-select: none;
+  pointer-events: none;
+}
+hittext p{
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  display: block;
+  width: 64px;
+  height: 64px;
+  font-family: monospace;
+  font-weight: bold;
+  animation: hittext_animation 0.7s linear forwards;
+  user-select: none;
+  pointer-events: none;
+}
+@keyframes hittext_animation{
+  0%   {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-22px);
+  }
+}
+
+user_interface{
+  user-select: none;
+  pointer-events: none;
+}
+
+water_meter, health_bar{
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30px;
+  height: 80px;
+  border: 4px solid grey;
+  border-radius: 3px;
+}
+health_bar{
+  top: 10px;
+  right: 15px;
+}
+water_meter{
+  top: 140px;
+  right: 15px;
+}
+water_meter div, health_bar div{
+  position: relative;
+  width: 100%;
+  height: 0%;
+}
+water_meter div{
+  background-color: #0051ff;
+}
+health_bar div{
+  background-color: #ff0000;
+}
+water_meter p, health_bar p{
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  color: grey;
+  font-size: 20px;
+  font-family: monospace;
+  text-align: center;
+  user-select: none;
+}
+score, level{
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 5ch;
+  height: 1em;
+  font-size: 40px;
+  border-radius: 3px;
+  user-select: none;
+  pointer-events: none;
+}
+level{
+  right: unset;
+  left: 15px;
+  width: 15ch;
+}
+score p, level p{
+  width: 100%;
+  margin: unset;
+  color: grey;
+  font-size: inherit;
+  font-family: monospace;
+  text-align: right;
+  user-select: none;
+}
+level p{
+  text-align: left;
+}
+
+
+cacti{
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  user-select: none;
+  pointer-events: none;
+}
+cactus{
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  user-select: none;
+  pointer-events: all;
+}
+.normal_cactus{
+  background-image: url('Images/sprites/normal_cacti.png');
+}
+.left_cactus{
+  background-image: url('Images/sprites/left_cacti.png');
+}
+.right_cactus{
+  background-image: url('Images/sprites/right_cacti.png');
+}
+.fire_cactus{
+  background-image: url('Images/sprites/flaming_cacti.png');
+}
+.dead_cactus{
+  background-image: url('Images/sprites/dead_cacti.png');
+}
+.blob_cactus{
+  background-image: url('Images/sprites/blob_cacti.png');
+}
+.tumbleweed{
+  background-image: url('Images/sprites/weed.png');
+}
+
+.pond{
+  position: absolute;
+  z-index: 1;
+  top: -100px;
+  left: -100px;
+  display: block;
+  width: 128px;
+  height: 128px;
+  background-image: url('Images/ponds/pond10.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  user-select: none;
+}
+
+aim_trace{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 0px;
+  height: 3px;
+  border: 4px dashed cornflowerblue;
+  box-sizing: border-box;
+  transform: rotate(0deg);
+  transform-origin: 0% 0%;
+  clip-path: polygon(0% 0px, 100% 0px, 100% 2px, 0% 2px);
+  user-select: none;
+  pointer-events: none;
+}
+crosshair{
+  position: absolute;
+  z-index: 2;
+  top: -50px;
+  left: -50px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url('Images/crosshair.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+
+hearts{
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  user-select: none;
+  pointer-events: none;
+}
+heart{
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url('Images/heart.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  user-select: none;
+  pointer-events: all;
+}
+
+
+
+.a_jump{
+  animation: a_jump 0.4s linear forwards;
+}
+@keyframes a_jump{
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(-25px);}
+  100% {transform: translateY(0px);}
+}
+.a_cactus_celebration{
+  animation: a_cactus_celebration 0.8s linear infinite;
+}
+@keyframes a_cactus_celebration{
+  0%   {transform: translateY(0px);}
+  20%  {transform: translateY(0px);}
+  50%  {transform: translateY(-25px);}
+  80%  {transform: translateY(0px);}
+  100% {transform: translateY(0px);}
+}
