@@ -42,7 +42,6 @@ function spawnPond(){
   var pos = {x: (game_width / 2) - (64), y: (game_height / 2) - (64)};
   var id = "POND";
   var pond = document.createElement("pond");
-  pond.classList.add("pond");
   pond.id = id;
   pond.style.left = pos.x + "px";
   pond.style.top = pos.y + "px";
