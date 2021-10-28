@@ -34,5 +34,6 @@ def add_score(request):
     if request.method == 'POST':
         kacti_data = ExplodingKactiScore.objects.get()
         kacti_data.score = request.POST['score']
+        kacti_data.name = request.POST['name']
         kacti_data.save()
         process_score.updateScores()
