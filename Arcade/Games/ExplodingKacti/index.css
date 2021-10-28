@@ -208,6 +208,24 @@ cactus{
   background-size: 100%;
   user-select: none;
 }
+.pond10{
+  background-image: url('Images/ponds/pond10.png');
+}
+.pond8{
+  background-image: url('Images/ponds/pond8.png');
+}
+.pond6{
+  background-image: url('Images/ponds/pond6.png');
+}
+.pond4{
+  background-image: url('Images/ponds/pond4.png');
+}
+.pond2{
+  background-image: url('Images/ponds/pond2.png');
+}
+.pond0{
+  background-image: url('Images/ponds/pond0.png');
+}
 
 aim_trace{
   position: absolute;
