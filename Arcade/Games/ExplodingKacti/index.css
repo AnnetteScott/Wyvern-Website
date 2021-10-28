@@ -288,21 +288,60 @@ heart{
 
 end_screen{
   position: absolute;
-  display: none;
+  z-index: 4;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
 }
 end_screen_inner{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  background-image: none;
+  width: 400px;
+  height: 350px;
+  background-image: url(Images/end_screen_border.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 end_screen_inner h1{
+  justify-self: flex-start;
   color: black;
   font-size: 30px;
+  font-family: monospace;
+}
+end_screen_inner p{
+  color: black;
+  font-size: 20px;
+  font-family: monospace;
+}
+end_screen_inner input[type=text]{
+  color: black;
+  font-size: 26px;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: none;
+}
+end_screen_inner button{
+  color: black;
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 0px;
+}
+
+.end_screen_invisible{
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
 }
 
 

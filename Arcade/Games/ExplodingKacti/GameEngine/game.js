@@ -190,12 +190,19 @@ function gameOver(){
   }
 }
 
+var playername = 'AAA';
+var final_score = 0;
+function updatePlayerName(event){
+  playername = event.target.value;
+}
+
 
 function showEndScreen(){
-  var name = 'Jane';
-  var final_score = parseInt(score_elem.innerHTML);
+  var endscreen = document.querySelector("end_screen");
+  final_score = parseInt(score_elem.innerHTML);
+  document.querySelector("#end_screen_score").innerHTML += final_score;
 
-  transmitToServer({'name': name, 'score': final_score});
+  endscreen.classList.remove("end_screen_invisible");
 }
 
 

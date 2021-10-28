@@ -25,10 +25,13 @@
 
       <hearts></hearts>
 
-      <end_screen>
+      <end_screen class="end_screen_invisible">
         <end_screen_inner>
           <h1>GAME OVER</h1>
-          <p>Score: </p>
+          <p id="end_screen_score">Score: </p>
+          <p>Enter your name here:</p>
+          <input type="text" name="playername" maxlength="3" onchange="updatePlayerName(event)">
+          <button onclick="transmitToServer({'name': playername, 'score': final_score})">Submit</button>
         </end_screen_inner>
       </end_screen>
 
