@@ -288,7 +288,7 @@ heart{
 
 end_screen{
   position: absolute;
-
+  display: none;
 }
 end_screen_inner{
   display: flex;
