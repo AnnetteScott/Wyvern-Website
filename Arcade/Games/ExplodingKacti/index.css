@@ -232,6 +232,21 @@ pond{
 .pond0{
   background-image: url('Images/ponds/pond0.png');
 }
+pond::after{
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url('Images/player.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  animation: a_cactus_celebration 0.8s linear infinite;
+  user-select: none;
+}
 
 aim_trace{
   position: absolute;
