@@ -224,7 +224,7 @@ function submitScore(){
     can_submit_score = 0;
     hideEndScreen();
     transmitToServer({'name': playername, 'score': final_score});
-    getLeaderboardData();
+    window.location.reload();
   }
 }
 
