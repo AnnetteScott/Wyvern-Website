@@ -17,7 +17,6 @@ function getCookie(name) {
 }
 
 
-
 var data_transmit_enable = 1;
 function transmitToServer(data){
   if(data_transmit_enable == 1){
