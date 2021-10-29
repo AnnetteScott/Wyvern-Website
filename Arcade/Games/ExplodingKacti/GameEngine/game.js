@@ -28,7 +28,10 @@ var anim_intervals = {};
 /*==============Main Game Loop============*/
 let game_params = {};
 function gameMain(){
-  document.querySelector("main_menu").classList.add("main_menu_invisible");
+  document.querySelector("main_menu").classList.add("invisible");
+  document.querySelector("user_interface").classList.remove("invisible");
+  document.querySelector("aim_trace").classList.remove("invisible");
+  document.querySelector("crosshair").classList.remove("invisible");
 
   spawnPond();
 
@@ -208,14 +211,20 @@ function showEndScreen(){
   final_score = parseInt(score_elem.innerHTML);
   document.querySelector("#end_screen_score").innerHTML += final_score;
 
-  endscreen.classList.remove("end_screen_invisible");
+  endscreen.classList.remove("invisible");
+}
+function hideEndScreen(){
+  var endscreen = document.querySelector("end_screen");
+  endscreen.classList.add("invisible");
 }
 
 
 function submitScore(){
   if(can_submit_score === 1){
     can_submit_score = 0;
+    hideEndScreen();
     transmitToServer({'name': playername, 'score': final_score});
+    getLeaderboardData();
   }
 }
 
@@ -243,11 +252,13 @@ function handleClickEvent(e){
 function leaderboard(){
   var lb_list = document.querySelectorAll("leaderboard li");
   leaderboard_data.forEach((item, i) => {
-    console.log(item);
     if(item){
       lb_list[i].innerHTML = item['fields']['name'] + ": " + item['fields']['score'];
     }
   });
+  document.querySelector("leaderboard").classList.remove("invisible");
+}
 
-  document.querySelector("leaderboard").classList.remove("leaderboard_invisible");
+function closeLeaderboard(){
+
 }

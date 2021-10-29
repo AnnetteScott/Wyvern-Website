@@ -40,7 +40,8 @@ function transmitToServer(data){
 function getLeaderboardData(){
   if(data_transmit_enable == 1){
     data_transmit_enable = 0;
-    document.querySelector("main_menu").classList.add("main_menu_invisible");
+    document.querySelector("main_menu").classList.add("invisible");
+    hideEndScreen();
     $.ajax({
       method: 'GET',
       headers: {'X-CSRFToken': getCookie('csrftoken')},
