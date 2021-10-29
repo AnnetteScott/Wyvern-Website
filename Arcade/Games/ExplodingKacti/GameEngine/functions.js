@@ -205,3 +205,9 @@ function pondDamage(pond_health){
   document.querySelector("pond").classList = '';
   document.querySelector("pond").classList.add(pond_images);
 }
+
+
+
+function between(x, min, max) {
+  return x >= min && x <= max;
+}
