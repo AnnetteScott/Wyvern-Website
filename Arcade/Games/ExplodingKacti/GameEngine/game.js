@@ -243,7 +243,10 @@ function handleClickEvent(e){
 function leaderboard(){
   var lb_list = document.querySelectorAll("leaderboard li");
   leaderboard_data.forEach((item, i) => {
-    lb_list[i].innerHTML = item['fields']['name'] + ": " + item['fields']['score'];
+    console.log(item);
+    if(item){
+      lb_list[i].innerHTML = item['fields']['name'] + ": " + item['fields']['score'];
+    }
   });
 
   document.querySelector("leaderboard").classList.remove("leaderboard_invisible");
