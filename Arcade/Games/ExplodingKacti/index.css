@@ -9,6 +9,12 @@
   user-select: none;
 }
 
+preload_images{
+  display: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 game{
   position: absolute;
   z-index: 1;

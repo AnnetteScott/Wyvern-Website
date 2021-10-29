@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="{% static 'index.css' %}">
   </head>
   <body>
+    <preload_images>
+      <img src="{% static 'Images/ponds/pond0.png' %}" draggable="false">
+      <img src="{% static 'Images/ponds/pond2.png' %}" draggable="false">
+      <img src="{% static 'Images/ponds/pond4.png' %}" draggable="false">
+      <img src="{% static 'Images/ponds/pond6.png' %}" draggable="false">
+      <img src="{% static 'Images/ponds/pond8.png' %}" draggable="false">
+      <img src="{% static 'Images/ponds/pond10.png' %}" draggable="false">
+    </preload_images>
     <game onmousemove="updateCursorPosition(event)" onclick="handleClickEvent(event)">
       <game_background></game_background>
 
