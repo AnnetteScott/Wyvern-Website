@@ -35,4 +35,9 @@ var difficulty = [
   {'level': '18', 'maxCacti': 95, 'scoreThreshold': 800, 'spawnSpeed': 100, 'cactiMovingSpeed': 4.5, 'fireCacti': 200, 'heart_spawn_chance': 150},
   {'level': '19', 'maxCacti': 100, 'scoreThreshold': 850, 'spawnSpeed': 50, 'cactiMovingSpeed': 5, 'fireCacti': 250, 'heart_spawn_chance': 200},
   {'level': '20', 'maxCacti': 150, 'scoreThreshold': 900, 'spawnSpeed': 20, 'cactiMovingSpeed': 5.5, 'fireCacti': 300, 'heart_spawn_chance': 500},
+  {'level': '21', 'maxCacti': 200, 'scoreThreshold': 1000, 'spawnSpeed': 10, 'cactiMovingSpeed': 6, 'fireCacti': 350, 'heart_spawn_chance': 1000},
+  {'level': '22', 'maxCacti': 250, 'scoreThreshold': 1250, 'spawnSpeed': 10, 'cactiMovingSpeed': 6.5, 'fireCacti': 400, 'heart_spawn_chance': 1000},
+  {'level': '23', 'maxCacti': 300, 'scoreThreshold': 1500, 'spawnSpeed': 10, 'cactiMovingSpeed': 7, 'fireCacti': 450, 'heart_spawn_chance': 1000},
+  {'level': '24', 'maxCacti': 350, 'scoreThreshold': 1750, 'spawnSpeed': 10, 'cactiMovingSpeed': 7.5, 'fireCacti': 500, 'heart_spawn_chance': 1000},
+  {'level': '25', 'maxCacti': 400, 'scoreThreshold': 2000, 'spawnSpeed': 10, 'cactiMovingSpeed': 8, 'fireCacti': 600, 'heart_spawn_chance': 1000},
 ];
