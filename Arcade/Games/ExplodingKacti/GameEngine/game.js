@@ -1,3 +1,4 @@
+//const page_navbar_height = parseInt(document.querySelector("nav") ? window.getComputedStyle(document.querySelector("nav")).getPropertyValue("height") : 0);
 var game_elem = document.querySelector("game");
 var game_width = game_elem.offsetWidth;
 var game_height = game_elem.offsetHeight;
