@@ -55,7 +55,7 @@ function spawnCactus(type = "normal_cactus"){
   checkScore();
   if(Object.keys(all_cacti).length < max_num_of_cacti){
     var pos = {x: center_of_game.x, y: center_of_game.y};
-    while(getLinearDistance(pos, center_of_game) < cacti_min_spawn_distance){
+    while(getLinearDistance(pos, center_of_game) < cacti_min_spawn_distance || between(pos.x, (center_of_game.x - 75), (center_of_game.x + 75))){
       pos = {x: (Math.random() * game_width), y: (Math.random() * game_height)};
     }
 
