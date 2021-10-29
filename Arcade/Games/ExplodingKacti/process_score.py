@@ -1,6 +1,7 @@
 from ...models import ExplodingKactiScore
 
-def updateScores(data):        
+def updateScores(data):
+    data = list(ExplodingKactiScore.objects.values().order_by('-score'))        
     if len(data) > 10:
         data_length = len(data)
         for index in range(10, data_length):
