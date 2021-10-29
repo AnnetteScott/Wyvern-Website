@@ -355,12 +355,6 @@ main_menu_inner button{
   border-radius: 0px;
 }
 
-.main_menu_invisible{
-  opacity: 0;
-  user-select: none;
-  pointer-events: none;
-}
-
 
 leaderboard{
   position: absolute;
@@ -402,12 +396,6 @@ leaderboard_inner li{
   color: black;
   font-size: 20px;
   font-family: monospace;
-}
-
-.leaderboard_invisible{
-  opacity: 0;
-  user-select: none;
-  pointer-events: none;
 }
 
 
@@ -465,7 +453,7 @@ end_screen_inner button{
   border-radius: 0px;
 }
 
-.end_screen_invisible{
+.invisible{
   opacity: 0;
   user-select: none;
   pointer-events: none;
