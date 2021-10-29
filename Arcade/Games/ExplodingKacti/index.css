@@ -397,6 +397,14 @@ leaderboard_inner li{
   font-size: 20px;
   font-family: monospace;
 }
+leaderboard_inner button{
+  color: black;
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 0px;
+}
 
 
 end_screen{

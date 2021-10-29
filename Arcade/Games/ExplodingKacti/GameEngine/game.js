@@ -260,5 +260,6 @@ function leaderboard(){
 }
 
 function closeLeaderboard(){
-
+  document.querySelector("leaderboard").classList.add("invisible");
+  window.location.reload();
 }
