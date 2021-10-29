@@ -3,6 +3,12 @@ from .models import GamesList, ExplodingKactiScore
 from django.http import HttpResponse
 from .Games.ExplodingKacti import process_score
 
+games_dict = {'Exploding Kacti': ExplodingKactiScore}
+
+
+
+
+
 # Create your views here.
 def home(request):
     games_list_dict = list(GamesList.objects.values())
@@ -23,9 +29,13 @@ def gamePage(request, gameurl):
             break
 
     if game_status == True:
-
         context = {'title': title, 'status': game_status}
-        process_score.updateScores()
+        
+        if title == 'Exploding Kacti':  
+            data = list(ExplodingKactiScore.objects.values().order_by('-score'))
+            process_score.updateScores(data)
+            context['high_scores'] = data
+            
         return render(request, title + '.html', context)
     else:
         return render(request, 'Arcade/gamedownpage.html')
