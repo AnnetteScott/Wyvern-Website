@@ -27,13 +27,14 @@ var anim_intervals = {};
 /*==============Main Game Loop============*/
 let game_params = {};
 function gameMain(){
+  document.querySelector("main_menu").classList.add("main_menu_invisible");
 
   spawnPond();
 
   anim_intervals['spawn_cacti'] = window.setInterval(function(){spawnCactus(spawnChance(cacti_types))}, spawn_speed);
   anim_intervals['move_cacti'] = window.setInterval(function(){moveAllCacti()}, 50);
 }
-gameMain();
+//gameMain();
 
 
 

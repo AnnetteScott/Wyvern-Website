@@ -307,6 +307,61 @@ heart{
 }
 
 
+
+main_menu{
+  position: absolute;
+  z-index: 4;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+  transition: 2s ease all;
+}
+main_menu_inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 350px;
+  background-image: url(Images/end_screen_border-2.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+main_menu_inner h1{
+  justify-self: flex-start;
+  color: black;
+  font-size: 40px;
+  font-family: monospace;
+  letter-spacing: normal;
+}
+main_menu_inner p{
+  color: black;
+  font-size: 20px;
+  font-family: monospace;
+}
+main_menu_inner button{
+  color: black;
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 0px;
+}
+
+.main_menu_invisible{
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+
 end_screen{
   position: absolute;
   z-index: 4;
@@ -336,8 +391,9 @@ end_screen_inner{
 end_screen_inner h1{
   justify-self: flex-start;
   color: black;
-  font-size: 30px;
+  font-size: 40px;
   font-family: monospace;
+  letter-spacing: normal;
 }
 end_screen_inner p{
   color: black;
