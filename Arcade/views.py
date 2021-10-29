@@ -34,9 +34,9 @@ def gamePage(request, gameurl):
     if game_status == True:
         context = {'title': title, 'status': game_status}
         
-        if title == 'Exploding Kacti':  
+        if title == 'Exploding Kacti': 
+            process_score.updateScores()
             data = list(ExplodingKactiScore.objects.values().order_by('-score'))
-            process_score.updateScores(data)
             context['high_scores'] = data
             
         return render(request, title + '.html', context)
