@@ -26,5 +26,13 @@ var difficulty = [
   {'level': '9', 'maxCacti': 50, 'scoreThreshold': 350, 'spawnSpeed': 550, 'cactiMovingSpeed': 1.8, 'fireCacti': 50, 'heart_spawn_chance': 20 },
   {'level': '10', 'maxCacti': 55, 'scoreThreshold': 400, 'spawnSpeed': 500, 'cactiMovingSpeed': 1.9, 'fireCacti': 60, 'heart_spawn_chance': 30 },
   {'level': '11', 'maxCacti': 60, 'scoreThreshold': 450, 'spawnSpeed': 450, 'cactiMovingSpeed': 2.0, 'fireCacti': 70, 'heart_spawn_chance': 40 },
-  {'level': '12', 'maxCacti': 65, 'scoreThreshold': 500, 'spawnSpeed': 400, 'cactiMovingSpeed': 2.25, 'fireCacti': 80, 'heart_spawn_chance': 50}
+  {'level': '12', 'maxCacti': 65, 'scoreThreshold': 500, 'spawnSpeed': 400, 'cactiMovingSpeed': 2.25, 'fireCacti': 80, 'heart_spawn_chance': 50},
+  {'level': '13', 'maxCacti': 70, 'scoreThreshold': 550, 'spawnSpeed': 350, 'cactiMovingSpeed': 2.5, 'fireCacti': 90, 'heart_spawn_chance': 50},
+  {'level': '14', 'maxCacti': 75, 'scoreThreshold': 600, 'spawnSpeed': 300, 'cactiMovingSpeed': 2.75, 'fireCacti': 100, 'heart_spawn_chance': 60},
+  {'level': '15', 'maxCacti': 80, 'scoreThreshold': 650, 'spawnSpeed': 250, 'cactiMovingSpeed': 3, 'fireCacti': 110, 'heart_spawn_chance': 70},
+  {'level': '16', 'maxCacti': 85, 'scoreThreshold': 700, 'spawnSpeed': 200, 'cactiMovingSpeed': 3.5, 'fireCacti': 120, 'heart_spawn_chance': 100},
+  {'level': '17', 'maxCacti': 90, 'scoreThreshold': 750, 'spawnSpeed': 150, 'cactiMovingSpeed': 4, 'fireCacti': 150, 'heart_spawn_chance': 120},
+  {'level': '18', 'maxCacti': 95, 'scoreThreshold': 800, 'spawnSpeed': 100, 'cactiMovingSpeed': 4.5, 'fireCacti': 200, 'heart_spawn_chance': 150},
+  {'level': '19', 'maxCacti': 100, 'scoreThreshold': 850, 'spawnSpeed': 50, 'cactiMovingSpeed': 5, 'fireCacti': 250, 'heart_spawn_chance': 200},
+  {'level': '20', 'maxCacti': 150, 'scoreThreshold': 900, 'spawnSpeed': 20, 'cactiMovingSpeed': 5.5, 'fireCacti': 300, 'heart_spawn_chance': 500},
 ];
