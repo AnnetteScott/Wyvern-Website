@@ -1,4 +1,5 @@
 //const page_navbar_height = parseInt(document.querySelector("nav") ? window.getComputedStyle(document.querySelector("nav")).getPropertyValue("height") : 0);
+var leaderboard_data;
 var game_elem = document.querySelector("game");
 var game_width = game_elem.offsetWidth;
 var game_height = game_elem.offsetHeight;
@@ -236,4 +237,14 @@ function handleClickEvent(e){
     elem.remove();
     changeHealth(heart_item['health_regen']);
   }
+}
+
+
+function leaderboard(){
+  var lb_list = document.querySelectorAll("leaderboard li");
+  leaderboard_data.forEach((item, i) => {
+    lb_list[i].innerHTML = item['fields']['name'] + ": " + item['fields']['score'];
+  });
+
+  document.querySelector("leaderboard").classList.remove("leaderboard_invisible");
 }

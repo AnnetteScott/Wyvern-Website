@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.core import serializers
+import json
 from .models import GamesList, ExplodingKactiScore
 from django.http import HttpResponse
+from django.http import JsonResponse
 from .Games.ExplodingKacti import process_score
 
 games_dict = {'Exploding Kacti': ExplodingKactiScore}
@@ -46,4 +49,9 @@ def add_score(request):
         ExplodingKactiScore.objects.create(score=request.POST['score'], name=request.POST['name'])
         process_score.updateScores()
         return HttpResponse('success')
+
+    elif request.method == 'GET':
+        data = json.loads(serializers.serialize('json', ExplodingKactiScore.objects.all().order_by('-score')))
+        return JsonResponse(data, safe=False)
+
     return HttpResponse('error')

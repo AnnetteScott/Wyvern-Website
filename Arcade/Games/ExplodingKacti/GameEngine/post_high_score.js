@@ -36,3 +36,24 @@ function transmitToServer(data){
     });
   }
 }
+
+function getLeaderboardData(){
+  if(data_transmit_enable == 1){
+    data_transmit_enable = 0;
+    document.querySelector("main_menu").classList.add("main_menu_invisible");
+    $.ajax({
+      method: 'GET',
+      headers: {'X-CSRFToken': getCookie('csrftoken')},
+      url: 'add_score/',
+      success: function(data){
+        data_transmit_enable = 1;
+        leaderboard_data = data;
+        leaderboard();
+      },
+      error: function(xhr, status, err){
+        console.log("Error " + xhr.status);
+        data_transmit_enable = 1;
+      }
+    });
+  }
+}
