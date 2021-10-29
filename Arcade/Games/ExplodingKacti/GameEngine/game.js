@@ -130,11 +130,12 @@ function checkAmmo(){
 
 function checkScore(){
   var score = zeropad(parseInt(score_elem.innerHTML), 4);
-  var current_level = getDifficultyLevel(score)
+  var current_level = getDifficultyLevel(score);
   max_num_of_cacti = current_level['maxCacti'];
   spawn_speed = current_level['spawnSpeed'];
   cacti_movement_speed = current_level['cactiMovingSpeed'];
-  cacti_types['fire_cactus']['spawn_chance'] = current_level['fireCacti']
+  cacti_types['fire_cactus']['spawn_chance'] = current_level['fireCacti'];
+  document.querySelector("level p").innerHTML = "Level " + current_level['level'];
 }
 
 function explode(pos, color){
@@ -180,6 +181,7 @@ function cactusAttack(cacti_id){
 function gameOver(){
   if(pond_item['pond_health'] <= 0){
     //ENDGAME
+    pond_elem.classList.add("noafter");
     window.clearInterval(anim_intervals['spawn_cacti']);
     window.clearInterval(anim_intervals['move_cacti']);
     document.querySelectorAll('cactus').forEach((elem) => {
