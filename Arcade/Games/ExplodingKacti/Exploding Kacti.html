@@ -18,7 +18,7 @@
         </main_menu_inner>
       </main_menu>
 
-      <leaderboard class="leaderboard_invisible">
+      <leaderboard class="invisible">
         <leaderboard_inner>
           <h1>Leaderboard</h1>
           <ol>
@@ -36,14 +36,14 @@
         </leaderboard_inner>
       </leaderboard>
       
-      <user_interface>
+      <user_interface class="invisible">
         <level><p>Level 1</p></level>
         <health_bar><div style="height:100%;"></div><p>100%</p></health_bar>
         <water_meter><div style="height:0%;"></div><p>0%</p></water_meter>
         <score><p>0000</p></score>
       </user_interface>
-      <aim_trace></aim_trace>
-      <crosshair></crosshair>
+      <aim_trace class="invisible"></aim_trace>
+      <crosshair class="invisible"></crosshair>
 
       <cacti></cacti>
 
@@ -51,7 +51,7 @@
 
       <hearts></hearts>
 
-      <end_screen class="end_screen_invisible">
+      <end_screen class="invisible">
         <end_screen_inner>
           <h1>GAME OVER</h1>
           <p>The kacti won.</p>
@@ -59,7 +59,7 @@
           <p>Enter your name here:</p>
           <input type="text" name="playername" maxlength="3" onchange="updatePlayerName(event)">
           <button onclick="submitScore()">Submit</button>
-          <button onclick="getLeaderboardData()">Leaderboard</button>
+          <button onclick="getLeaderboardData()"style="margin-top: 10px;">Leaderboard</button>
         </end_screen_inner>
       </end_screen>
 
