@@ -141,6 +141,7 @@ function checkScore(){
   cacti_movement_speed = current_level['cactiMovingSpeed'];
   cacti_types['fire_cactus']['spawn_chance'] = current_level['fireCacti'];
   document.querySelector("level p").innerHTML = "Level " + current_level['level'];
+  heart_item['spawn_chance'] = current_level['heart_spawn_chance']
 }
 
 function explode(pos, color){
