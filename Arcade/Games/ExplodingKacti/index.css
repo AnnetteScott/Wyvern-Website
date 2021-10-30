@@ -488,9 +488,9 @@ end_screen_inner button{
 }
 @keyframes a_turt_jump{
   0%   {transform: translateY(0px);}
-  20%  {transform: translateY(0px);}
-  50%  {transform: translateY(-15px);}
-  80%  {transform: translateY(0px);}
+  25%  {transform: translateY(0px);}
+  50%  {transform: translateY(-12px);}
+  75%  {transform: translateY(0px);}
   100% {transform: translateY(0px);}
 }
 .a_cactus_celebration{
