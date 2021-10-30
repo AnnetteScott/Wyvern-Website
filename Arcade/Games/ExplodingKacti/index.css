@@ -241,7 +241,7 @@ pond{
 pond::after{
   content: "";
   position: absolute;
-  top: 2px;
+  top: 34px;
   left: 40px;
   display: block;
   width: 40px;
@@ -250,7 +250,7 @@ pond::after{
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  animation: a_cactus_celebration 0.8s linear infinite;
+  animation: a_turt_jump 0.7s linear infinite;
   user-select: none;
 }
 
@@ -481,6 +481,16 @@ end_screen_inner button{
 @keyframes a_jump{
   0%   {transform: translateY(0px);}
   50%  {transform: translateY(-25px);}
+  100% {transform: translateY(0px);}
+}
+.a_turt_jump{
+  animation: a_turt_jump 0.7s linear infinite;
+}
+@keyframes a_turt_jump{
+  0%   {transform: translateY(0px);}
+  20%  {transform: translateY(0px);}
+  50%  {transform: translateY(-15px);}
+  80%  {transform: translateY(0px);}
   100% {transform: translateY(0px);}
 }
 .a_cactus_celebration{
