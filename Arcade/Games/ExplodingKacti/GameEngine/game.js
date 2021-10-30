@@ -253,7 +253,7 @@ function handleClickEvent(e){
 function leaderboard(){
   var lb_list = document.querySelectorAll("leaderboard li");
   leaderboard_data.forEach((item, i) => {
-    if(item){
+    if(item && i < 10){
       lb_list[i].innerHTML = item['fields']['name'] + ": " + item['fields']['score'];
     }
   });
