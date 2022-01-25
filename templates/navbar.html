@@ -11,6 +11,7 @@
 {% url 'Invoice' as Invoice %}
 {% url 'Login' as Login %}
 {% url 'Logout' as Logout %}
+{% url 'SignUp' as SignUp %}
 {% load static %}
 <nav>
   <background></background>
@@ -83,6 +84,7 @@
       <a href="{% url 'Logout' %}">Log Out</a>
     {% else %}
       <a href="{% url 'Login' %}">Log In</a>
+      <a href="{% url 'SignUp' %}">Create Account</a>
     {% endif %}
   </navlinks>
 </nav>
