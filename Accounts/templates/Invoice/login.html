@@ -1,5 +1,5 @@
 {% extends 'main.html' %}
-{% url 'SignUp' as SignUp %}
+{% url 'Login' as Login %}
 {% load static %}
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,10 +26,15 @@
     }
 
 </style>
-<background_image style="background-image:url({% static 'Images/InvoiceHome.webp' %});filter:blur(7px);"></background_image>
+<background_image style="background-image:url({% static 'Images/SignHome.webp' %});filter:blur(7px);"></background_image>
 <main>
-    <h1>Sign In</h1>
+    <h1>Log In</h1>
     <content_center>
+    <form class="site-form" action="{% url 'Login' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Login">
+    </form>
     </content_center>
 </main>
 {% endblock content %}

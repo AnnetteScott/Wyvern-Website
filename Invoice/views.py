@@ -1,22 +1,12 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse
+from django.contrib.auth import login, logout
 
 # Create your views here.
 def home(request):
     return render(request, 'Invoice/home.html')
     
-def SignUp(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            #log the user in
-            return redirect(reverse('Invoice'))
-    else:
-        form = UserCreationForm()
-    return render(request, 'Invoice/signup.html', {'form': form})
+def userHome(request, user_name):
 
-
-def SignIn(request):
-    return render(request, 'Invoice/signin.html')
+    return render(request, 'Invoice/home.html')

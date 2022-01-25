@@ -9,6 +9,8 @@
 {% url 'Arcade' as Arcade %}
 {% url 'WhatToDo' as WhatToDo %}
 {% url 'Invoice' as Invoice %}
+{% url 'Login' as Login %}
+{% url 'Logout' as Logout %}
 {% load static %}
 <nav>
   <background></background>
@@ -76,5 +78,11 @@
     {% endif %}>
     <p>What To Do?</p></a>
 
+    {% if user.is_authenticated %}
+      <p> Hello {{ user.get_username }}</p>
+      <a href="{% url 'Logout' %}">Log Out</a>
+    {% else %}
+      <a href="{% url 'Login' %}">Log In</a>
+    {% endif %}
   </navlinks>
 </nav>

@@ -16,6 +16,7 @@ urlpatterns = [
     path('', include('Arcade.urls')),
     path('', include('WhatToDo.urls')),
     path('', include('Invoice.urls')),
+    path('', include('Accounts.urls')),
 ]
 
 if settings.DEBUG:

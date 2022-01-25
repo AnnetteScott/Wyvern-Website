@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Arcade',
     'WhatToDo',
     'Invoice',
+    'Accounts',
     'lib',
     
 ]
