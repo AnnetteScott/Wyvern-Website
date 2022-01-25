@@ -7,6 +7,7 @@ class UserSetting(models.Model):
 	maxWeeks = models.IntegerField()
 	lastWeek = models.IntegerField()
 	startDate = models.DateField()
+	url = models.CharField(max_length=100)
 
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)

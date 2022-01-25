@@ -10,8 +10,8 @@
         height: 100%;
     }
     grid_medium card{
-        width: 175px;
-        min-width: 175px;
+        width: 150px;
+        min-width: 150px;
         height: 100px;
         min-height: 100px;
         border: 2px solid black;
@@ -30,21 +30,38 @@
 <main>
     <h1>{{ user.get_username }}</h1>
     <br>
-    <content_center>
-        <form action ="{% url 'Invoice' %}{{ user.get_username }}/" method="post">
-            {% csrf_token %}
-            <div> Project Name </div>
-            {{ form.ProjectName }}
-            {% if exists %}
-                <div> Project Name Already In Use! </div>
-            {% endif %}
-            <div> Max Weeks </div>
-            {{ form.MaxWeeks }}
-            <div> Start Date (YYYY-MM-DD) </div>
-            {{ form.startDate }}
-            <br>
-            <input type  = "submit" value = "Create New Project">
+    <content_center style="flex-direction:row;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:50%;">
+            <form action ="{% url 'Invoice' %}{{ user.get_username }}/" method="post">
+                {% csrf_token %}
+                <div> Project Name (NO - )</div>
+                {{ form.ProjectName }}
+                {% if exists %}
+                    <div> Project Name Already In Use! </div>
+                {% endif %}
+                <div> Max Weeks </div>
+                {{ form.MaxWeeks }}
+                <div> Start Date (YYYY-MM-DD) </div>
+                {{ form.startDate }}
+                <br>
+                <input type  = "submit" value = "Create New Project">
             </form>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:50%;">  
+            {% if user_has_projects %}
+                <grid_medium>
+                    {% for project in projectList %} 
+                        <a href="{% url 'Invoice' %}{{ user.get_username }}/{{ project.url }}/"> 
+                            <card>
+                                {{ project }} 
+                            </card>
+                        </a> 
+                    {% endfor %}      
+                </grid_medium>
+            {% else %}
+                No Projects Found
+            {% endif %}
+        </div>
     </content_center>
 </main>
 {% endblock content %}
