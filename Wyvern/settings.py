@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'CookieBook',
     'Arcade',
     'WhatToDo',
+    'Invoice',
     'lib',
     
 ]

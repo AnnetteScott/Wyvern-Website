@@ -1,3 +1,4 @@
+{% url 'Invoice' as Invoice %}
 {% url 'NettyHub' as NettyHub %}
 {% url 'HomeHub' as HomeHub %}
 {% url 'GitZak' as GitZak %}
@@ -7,6 +8,7 @@
 {% url 'CookieBook' as CookieBook %}
 {% url 'Arcade' as Arcade %}
 {% url 'WhatToDo' as WhatToDo %}
+{% url 'Invoice' as Invoice %}
 {% load static %}
 <nav>
   <background></background>
@@ -17,45 +19,62 @@
         class="active"
     {% endif %}>
     <p>Home</p></a>
+
+    <a href="{% url 'Invoice' %}" 
+    {% if Invoice in request.path %}
+      class="active"
+    {% endif %}>
+    <p>Invoice</p></a>
+    
+    <!---
     <a href="{% url 'NettyHub' %}" 
     {% if NettyHub in request.path %}
       class="active"
     {% endif %}>
     <p>Netty</p></a>
+
     <a href="{% url 'GitZak' %}"
     {% if GitZak in request.path %}
       class="active"
     {% endif %}>
     <p>Giga</p></a>
+
     <a href="{% url 'ChemHub' %}" 
     {% if ChemHub in request.path %}
       class="active"
     {% endif %}>
     <p>ChemHub</p></a>
+    --->
     <a href="{% url 'CookieBook' %}" 
     {% if CookieBook in request.path %}
       class="active"
     {% endif %}>
     <p>Cooke Book</p></a>
+
+    <!---
     <a href="{% url 'ToWay' %}" 
     {% if ToWay in request.path  %}
       class="active"
     {% endif %}>
     <p>Which Way?</p></a>
+
     <a href="{% url 'HowToNotDie101' %}" 
     {% if HowToNotDie101 in request.path %}
       class="active"
     {% endif %}>
     <p>Hazards 101</p></a>
+    --->
     <a href="{% url 'Arcade' %}" 
     {% if Arcade in request.path %}
       class="active"
     {% endif %}>
     <p>Arcade</p></a>
+
     <a href="{% url 'WhatToDo' %}" 
     {% if WhatToDo in request.path %}
       class="active"
     {% endif %}>
     <p>What To Do?</p></a>
+
   </navlinks>
 </nav>

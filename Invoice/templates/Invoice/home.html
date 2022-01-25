@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+<style>
+    main{
+        height: 100%;
+    }
+    grid_medium card{
+        width: 175px;
+        min-width: 175px;
+        height: 100px;
+        min-height: 100px;
+        border: 2px solid black;
+        backdrop-filter: blur(20px);
+        justify-content: center;
+    }
+    card > div p{
+        margin: -50px 0px 0px 0px;
+        font-size: 145px;
+        user-select: none;
+        transition: var(--ls_anim_duration_short) ease all;
+    }
+
+</style>
+<background_image style="background-image:url({% static 'Images/InvoiceHome.webp' %});filter:blur(7px);"></background_image>
+<main>
+    <h1>Wyvern Invoicing</h1>
+    <content_center>
+        <grid_medium>
+                <a href="/"> 
+                    <card>
+                        Sign In 
+                    </card>
+                </a> 
+                <a href="/"> 
+                    <card>
+                        Create A New Account 
+                    </card>
+                </a>     
+        </grid_medium>
+    </content_center>
+</main>
+{% endblock content %}
