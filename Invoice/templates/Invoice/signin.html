@@ -1,6 +1,5 @@
 {% extends 'main.html' %}
 {% url 'SignUp' as SignUp %}
-{% url 'SignIn' as SignIn %}
 {% load static %}
 {% block content %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,20 +28,8 @@
 </style>
 <background_image style="background-image:url({% static 'Images/InvoiceHome.webp' %});filter:blur(7px);"></background_image>
 <main>
-    <h1>Wyvern Invoicing</h1>
+    <h1>Sign In</h1>
     <content_center>
-        <grid_medium>
-                <a href="{% url 'SignIn' %}"> 
-                    <card>
-                        Sign In 
-                    </card>
-                </a> 
-                <a href="{% url 'SignUp' %}"> 
-                    <card>
-                        Create A New Account 
-                    </card>
-                </a>     
-        </grid_medium>
     </content_center>
 </main>
 {% endblock content %}
