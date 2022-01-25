@@ -14,7 +14,7 @@
 {% url 'SignUp' as SignUp %}
 {% load static %}
 <nav>
-  <background></background>
+  <background style="pointer-events:none;"></background>
   <site_logo><a href="/"><img src="{% static 'Images/site_logo.png' %}" draggable="false"></a></site_logo>
   <navlinks>
     <a href="/" 
@@ -78,7 +78,9 @@
       class="active"
     {% endif %}>
     <p>What To Do?</p></a>
+  </navlinks>
 
+  <div style="position:absolute;right:7px;">
     {% if user.is_authenticated %}
       <p> Hello {{ user.get_username }}</p>
       <a href="{% url 'Logout' %}">Log Out</a>
@@ -86,5 +88,5 @@
       <a href="{% url 'Login' %}">Log In</a>
       <a href="{% url 'SignUp' %}">Create Account</a>
     {% endif %}
-  </navlinks>
+  </div>
 </nav>
