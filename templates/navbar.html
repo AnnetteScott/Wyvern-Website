@@ -23,11 +23,13 @@
     {% endif %}>
     <p>Home</p></a>
 
-    <a href="{% url 'Invoice' %}" 
-    {% if Invoice in request.path %}
-      class="active"
-    {% endif %}>
-    <p>Invoice</p></a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'Invoice' %}" 
+      {% if Invoice in request.path %}
+        class="active"
+      {% endif %}>
+      <p>Invoice</p></a>
+    {% endif %}
     
     <!---
     <a href="{% url 'NettyHub' %}" 
